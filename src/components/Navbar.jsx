@@ -168,11 +168,23 @@ const Navbar = () => {
 
           <Button
             component={Link}
-            to="/admin"
+            to="https://kaving.vercel.app/"
+            target="_blank"
             variant="contained"
             color="primary"
             fullWidth
-            sx={{ mt: 4 }}
+            sx={{ mt: 4, mb: 2 }}
+          >
+            Register Now
+          </Button>
+
+          <Button
+            component={Link}
+            to="/admin"
+            variant="outlined"
+            color="primary"
+            fullWidth
+            sx={{ borderColor: '#E50914', color: '#E50914' }}
           >
             Admin Panel
           </Button>
