@@ -102,7 +102,7 @@ const Speakers = () => {
 
   useEffect(() => {
     getSpeakers()
-      .then((res) => setSpeakers(res.data.length ? res.data : SAMPLE_SPEAKERS))
+      .then((res) => setSpeakers(Array.isArray(res.data) && res.data.length ? res.data : SAMPLE_SPEAKERS))
       .catch(() => setSpeakers(SAMPLE_SPEAKERS))
       .finally(() => setLoading(false));
   }, []);

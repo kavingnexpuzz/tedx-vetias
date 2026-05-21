@@ -60,7 +60,7 @@ const Sponsors = () => {
 
   useEffect(() => {
     getSponsors()
-      .then((res) => setSponsors(res.data.length ? res.data : SAMPLE_SPONSORS))
+      .then((res) => setSponsors(Array.isArray(res.data) && res.data.length ? res.data : SAMPLE_SPONSORS))
       .catch(() => setSponsors(SAMPLE_SPONSORS));
   }, []);
 

@@ -46,7 +46,11 @@ const Home = () => {
 
   useEffect(() => {
     getSpeakers()
-      .then((res) => { if (res.data.length) setSpeakers(res.data.slice(0, 3)); })
+      .then((res) => {
+        if (Array.isArray(res.data) && res.data.length) {
+          setSpeakers(res.data.slice(0, 3));
+        }
+      })
       .catch(() => {});
   }, []);
 

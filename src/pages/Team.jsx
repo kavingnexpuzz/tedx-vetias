@@ -39,7 +39,7 @@ const Team = () => {
 
   useEffect(() => {
     getTeam()
-      .then((res) => setTeam(res.data.length ? res.data : SAMPLE_TEAM))
+      .then((res) => setTeam(Array.isArray(res.data) && res.data.length ? res.data : SAMPLE_TEAM))
       .catch(() => setTeam(SAMPLE_TEAM))
       .finally(() => setLoading(false));
   }, []);
