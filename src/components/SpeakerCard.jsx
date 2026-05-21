@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Typography, Chip } from '@mui/material';
 import ScrollReveal from './ScrollReveal';
 
@@ -15,8 +15,6 @@ const SpeakerCard = ({ speaker, delay = 0 }) => {
   return (
     <ScrollReveal direction="up" delay={delay}>
       <Box
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
         sx={{
           position: 'relative',
           overflow: 'hidden',
