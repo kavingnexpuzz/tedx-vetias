@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import SectionTitle from '../components/SectionTitle';
+
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';
 

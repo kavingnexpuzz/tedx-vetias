@@ -3,7 +3,7 @@ import { Box, Typography, Chip } from '@mui/material';
 import ScrollReveal from './ScrollReveal';
 
 const SpeakerCard = ({ speaker, delay = 0 }) => {
-  const [hovered, setHovered] = useState(false);
+  
 
   const initials = speaker.name
     .split(' ')

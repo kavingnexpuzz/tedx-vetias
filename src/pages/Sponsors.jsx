@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Container, Typography, Grid, Divider, Button } from '@mui/material';
+import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import SectionTitle from '../components/SectionTitle';
 import ScrollReveal from '../components/ScrollReveal';
 import SEO from '../components/SEO';

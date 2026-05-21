@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Typography, Grid, CircularProgress } from '@mui/material';
 import TeamCard from '../components/TeamCard';
-import SectionTitle from '../components/SectionTitle';
+
 import SEO from '../components/SEO';
 import { getTeam } from '../services/api';
 

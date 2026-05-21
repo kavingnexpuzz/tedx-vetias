@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Box, Typography, Button, Grid, Container, Chip,
+  Box, Typography, Button, Grid, Container
 } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import PlaceIcon from '@mui/icons-material/Place';
