@@ -178,16 +178,7 @@ const Navbar = () => {
             Register Now
           </Button>
 
-          <Button
-            component={Link}
-            to="/admin"
-            variant="outlined"
-            color="primary"
-            fullWidth
-            sx={{ borderColor: '#E50914', color: '#E50914' }}
-          >
-            Admin Panel
-          </Button>
+          
         </Box>
       </Drawer>
     </>
