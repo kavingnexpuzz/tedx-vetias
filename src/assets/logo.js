@@ -5,7 +5,7 @@ const TEDxLogo = ({
   height = 80,
   tedColor = "#E62B1E",
   textColor = "#FFFFFF",
-  backgroundColor = "#000000",
+  backgroundColor = "transparent",
 }) => {
   return (
     <div
