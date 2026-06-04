@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Box, Typography, Button, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import EventSeatIcon from "@mui/icons-material/EventSeat";
+import LogoLoop from "./LogoLoop";
+
+const seatLoopItems = [{ title: "Seats" }];
 
 const Hero = ({ seatInfo, seatError }) => {
   return (
@@ -25,14 +28,16 @@ const Hero = ({ seatInfo, seatError }) => {
         },
       }}
     >
-      {/* Seat Availability Banner */}
       <Box
         sx={{
           position: "absolute",
-          top: "65%",
-          left: "10%",
+          top: "68%",
+          left: "15%",
           transform: "translateX(-50%)",
           zIndex: 10,
+          maxWidth: 360,
+          display: "none",
+          width: "calc(100% - 32px)",
           background:
             "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(229, 9, 20, 0.85) 100%)",
           backdropFilter: "blur(10px)",
@@ -41,11 +46,6 @@ const Hero = ({ seatInfo, seatError }) => {
           borderRadius: "12px",
           border: "2px solid rgba(255, 255, 255, 0.2)",
           boxShadow: "0 8px 32px rgba(229, 9, 20, 0.4)",
-          animation: "pulse 2s ease-in-out infinite",
-          "@keyframes pulse": {
-            "0%, 100%": { opacity: 1, transform: "translateX(-50%) scale(1)" },
-            "50%": { opacity: 0.9, transform: "translateX(-50%) scale(1.02)" },
-          },
         }}
       >
         <Box
@@ -76,7 +76,76 @@ const Hero = ({ seatInfo, seatError }) => {
           </Typography>
         </Box>
       </Box>
-      {/* Animated particles in background */}
+
+      <Box
+        sx={{
+          position: "absolute",
+          left: 0,
+
+          right: 0,
+          top: "34%",
+          zIndex: 10,
+          px: 2,
+          pointerEvents: "none",
+        }}
+      >
+        <Container
+          maxWidth="lg"
+          sx={{ pointerEvents: "auto", top: "340px", position: "relative" }}
+        >
+          <LogoLoop
+            logos={seatLoopItems}
+            speed={90}
+            direction="left"
+            logoHeight={6}
+            gap={80}
+            mt={900}
+            hoverSpeed={0}
+            fadeOut
+            fadeOutColor="rgba(0,0,0,0)"
+            ariaLabel="Remaining seats"
+            renderItem={() => (
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 2,
+                  width: { xs: "180px", sm: "220px", md: "260px" },
+                  minHeight: "40px",
+                  px: 2,
+                  py: 1,
+                  background:
+                    "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(229, 9, 20, 0.9) 100%)",
+                  borderRadius: "16px",
+                  border: "2px solid rgba(255, 255, 255, 0.2)",
+                  boxShadow: "0 10px 40px rgba(229, 9, 20, 0.25)",
+                  color: "#FFFFFF",
+                  fontFamily: "'DM Mono', monospace",
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                }}
+              >
+                <EventSeatIcon sx={{ fontSize: "2rem" }} />
+                <Typography
+                  sx={{
+                    fontSize: { xs: "0.95rem", sm: "1.05rem", md: "1.1rem" },
+                  }}
+                >
+                  {seatInfo.seatsLeft != null
+                    ? seatInfo.seatsLeft === 0
+                      ? "🔴 SOLD OUT"
+                      : `✓ ${seatInfo.seatsLeft} SEATS LEFT`
+                    : seatError
+                      ? "Seat Data Unavailable"
+                      : "Loading..."}
+                </Typography>
+              </Box>
+            )}
+          />
+        </Container>
+      </Box>
+
       <Box
         sx={{
           position: "absolute",
@@ -111,10 +180,14 @@ const Hero = ({ seatInfo, seatError }) => {
 
       <Container
         maxWidth="lg"
-        sx={{ position: "relative", zIndex: 2, textAlign: "center", py: 12 }}
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          textAlign: "center",
+          py: 12,
+        }}
       >
         <Box sx={{ maxWidth: 900, mx: "auto" }}>
-          {/* Overline */}
           <Box
             sx={{
               display: "inline-flex",
@@ -148,7 +221,6 @@ const Hero = ({ seatInfo, seatError }) => {
             />
           </Box>
 
-          {/* Main headline */}
           <Typography
             variant="h1"
             sx={{
@@ -172,7 +244,6 @@ const Hero = ({ seatInfo, seatError }) => {
             <span>SPREADING</span>
           </Typography>
 
-          {/* Subtext */}
           <Typography
             variant="body1"
             sx={{
@@ -180,7 +251,7 @@ const Hero = ({ seatInfo, seatError }) => {
               maxWidth: 600,
               lineHeight: 1.8,
               fontSize: { xs: "0.95rem", sm: "1rem", md: "1.1rem" },
-              mb: 6,
+              mb: 7,
               mx: "auto",
               animation: "fadeInUp 0.9s 0.2s ease both",
               textShadow: "0 2px 10px rgba(0, 0, 0, 0.4)",
@@ -191,7 +262,6 @@ const Hero = ({ seatInfo, seatError }) => {
             conversations that matter.
           </Typography>
 
-          {/* CTA Buttons */}
           <Box
             sx={{
               display: "flex",
@@ -209,6 +279,7 @@ const Hero = ({ seatInfo, seatError }) => {
               size="large"
               endIcon={<ArrowForwardIcon />}
               sx={{
+                mt:5,
                 px: { xs: 3, sm: 4 },
                 py: { xs: 1.25, sm: 1.5 },
                 fontSize: { xs: "0.75rem", sm: "0.85rem" },
@@ -232,6 +303,7 @@ const Hero = ({ seatInfo, seatError }) => {
               variant="outlined"
               size="large"
               sx={{
+                mt:5,
                 px: { xs: 3, sm: 4 },
                 py: { xs: 1.25, sm: 1.5 },
                 fontSize: { xs: "0.75rem", sm: "0.85rem" },
@@ -256,7 +328,6 @@ const Hero = ({ seatInfo, seatError }) => {
         </Box>
       </Container>
 
-      {/* Scroll indicator */}
       <Box
         sx={{
           position: "absolute",
