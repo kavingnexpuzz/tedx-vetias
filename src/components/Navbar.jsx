@@ -43,21 +43,36 @@ const Navbar = () => {
         elevation={0}
         sx={{
           background: scrolled
-            ? 'rgba(10,10,10,0.96)'
-            : 'linear-gradient(to bottom, rgba(10,10,10,0.85), transparent)',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(229,9,20,0.2)' : 'none',
-          transition: 'all 0.4s ease',
+            ? "rgba(10,10,10,0.96)"
+            : "linear-gradient(to bottom, rgba(10,10,10,0.85), transparent)",
+          backdropFilter: scrolled ? "blur(16px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(229,9,20,0.2)" : "none",
+          transition: "all 0.4s ease",
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between', py: 1, px: { xs: 2, md: 4 } }}>
+        <Toolbar
+          sx={{ justifyContent: "space-between", py: 1, px: { xs: 2, md: 4 } }}
+        >
           {/* Logo */}
-          <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+          <Link
+            to="/"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <TEDxLogo size={32} />
           </Link>
 
           {/* Desktop nav */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5, alignItems: 'center' }}>
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              gap: 0.5,
+              alignItems: "center",
+            }}
+          >
             {NAV_LINKS.map((link) => (
               <Button
                 key={link.path}
@@ -65,26 +80,28 @@ const Navbar = () => {
                 to={link.path}
                 disableRipple
                 sx={{
-                  color: isActive(link.path) ? '#E50914' : '#ccc',
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.14em',
+                  color: isActive(link.path) ? "#E50914" : "#ccc",
+                  fontSize: "0.72rem",
+                  letterSpacing: "0.14em",
                   fontWeight: isActive(link.path) ? 700 : 500,
                   px: 1.5,
                   py: 1,
-                  position: 'relative',
-                  '&::after': {
+                  position: "relative",
+                  "&::after": {
                     content: '""',
-                    position: 'absolute',
+                    position: "absolute",
                     bottom: 4,
-                    left: '50%',
-                    transform: isActive(link.path) ? 'translateX(-50%) scaleX(1)' : 'translateX(-50%) scaleX(0)',
-                    width: '80%',
+                    left: "50%",
+                    transform: isActive(link.path)
+                      ? "translateX(-50%) scaleX(1)"
+                      : "translateX(-50%) scaleX(0)",
+                    width: "80%",
                     height: 1.5,
-                    background: '#E50914',
-                    transition: 'transform 0.3s ease',
+                    background: "#E50914",
+                    transition: "transform 0.3s ease",
                   },
-                  '&:hover': { color: '#fff', background: 'transparent' },
-                  '&:hover::after': { transform: 'translateX(-50%) scaleX(1)' },
+                  "&:hover": { color: "#fff", background: "transparent" },
+                  "&:hover::after": { transform: "translateX(-50%) scaleX(1)" },
                 }}
               >
                 {link.label}
@@ -93,11 +110,11 @@ const Navbar = () => {
 
             <Button
               component={Link}
-              to="https://kaving.vercel.app/"
+              to="https://docs.google.com/forms/d/e/1FAIpQLScIOMF97ZRgezLBqF7PbjWYwLfiLyK4LDNsuEx8EOMWgwGdVA/viewform?usp=dialog"
               target="__blank"
               variant="contained"
               color="primary"
-              sx={{ ml: 2, fontSize: '0.72rem', px: 2.5, py: 0.75 }}
+              sx={{ ml: 2, fontSize: "0.72rem", px: 2.5, py: 0.75 }}
             >
               Register
             </Button>
@@ -105,7 +122,7 @@ const Navbar = () => {
 
           {/* Mobile hamburger */}
           <IconButton
-            sx={{ display: { xs: 'flex', md: 'none' }, color: '#fff' }}
+            sx={{ display: { xs: "flex", md: "none" }, color: "#fff" }}
             onClick={() => setDrawerOpen(true)}
           >
             <MenuIcon />
@@ -121,15 +138,25 @@ const Navbar = () => {
         PaperProps={{
           sx: {
             width: 280,
-            background: '#0d0d0d',
-            borderLeft: '1px solid rgba(229,9,20,0.2)',
+            background: "#0d0d0d",
+            borderLeft: "1px solid rgba(229,9,20,0.2)",
           },
         }}
       >
         <Box sx={{ p: 3 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              mb: 4,
+            }}
+          >
             <TEDxLogo size={24} />
-            <IconButton onClick={() => setDrawerOpen(false)} sx={{ color: '#fff' }}>
+            <IconButton
+              onClick={() => setDrawerOpen(false)}
+              sx={{ color: "#fff" }}
+            >
               <CloseIcon />
             </IconButton>
           </Box>
@@ -143,11 +170,13 @@ const Navbar = () => {
                 to={link.path}
                 sx={{
                   mb: 0.5,
-                  borderLeft: isActive(link.path) ? '3px solid #E50914' : '3px solid transparent',
+                  borderLeft: isActive(link.path)
+                    ? "3px solid #E50914"
+                    : "3px solid transparent",
                   pl: 1.5,
-                  transition: 'border-color 0.2s',
-                  textDecoration: 'none',
-                  '&:hover': { borderLeftColor: '#E50914' },
+                  transition: "border-color 0.2s",
+                  textDecoration: "none",
+                  "&:hover": { borderLeftColor: "#E50914" },
                 }}
               >
                 <ListItemText
@@ -155,9 +184,9 @@ const Navbar = () => {
                   primaryTypographyProps={{
                     sx: {
                       fontFamily: "'Bebas Neue', sans-serif",
-                      fontSize: '1.6rem',
-                      letterSpacing: '0.06em',
-                      color: isActive(link.path) ? '#E50914' : '#ccc',
+                      fontSize: "1.6rem",
+                      letterSpacing: "0.06em",
+                      color: isActive(link.path) ? "#E50914" : "#ccc",
                       lineHeight: 1.3,
                     },
                   }}
@@ -177,8 +206,6 @@ const Navbar = () => {
           >
             Register Now
           </Button>
-
-          
         </Box>
       </Drawer>
     </>

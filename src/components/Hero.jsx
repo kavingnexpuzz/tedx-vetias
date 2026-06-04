@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Box, Typography, Button, Container } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import EventSeatIcon from "@mui/icons-material/EventSeat";
 
-const Hero = () => {
+const Hero = ({ seatInfo, seatError }) => {
   return (
     <Box
       sx={{
@@ -24,6 +25,57 @@ const Hero = () => {
         },
       }}
     >
+      {/* Seat Availability Banner */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: "65%",
+          left: "10%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
+          background:
+            "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(229, 9, 20, 0.85) 100%)",
+          backdropFilter: "blur(10px)",
+          py: 2.5,
+          px: { xs: 3, sm: 5 },
+          borderRadius: "12px",
+          border: "2px solid rgba(255, 255, 255, 0.2)",
+          boxShadow: "0 8px 32px rgba(229, 9, 20, 0.4)",
+          animation: "pulse 2s ease-in-out infinite",
+          "@keyframes pulse": {
+            "0%, 100%": { opacity: 1, transform: "translateX(-50%) scale(1)" },
+            "50%": { opacity: 0.9, transform: "translateX(-50%) scale(1.02)" },
+          },
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 2,
+          }}
+        >
+          <EventSeatIcon sx={{ color: "#fff", fontSize: "1.8rem" }} />
+          <Typography
+            sx={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: { xs: "0.9rem", sm: "1.1rem" },
+              fontWeight: 700,
+              color: "#FFFFFF",
+              letterSpacing: "0.08em",
+            }}
+          >
+            {seatInfo.seatsLeft != null
+              ? seatInfo.seatsLeft === 0
+                ? "🔴 SOLD OUT"
+                : `✓ ${seatInfo.seatsLeft} SEATS LEFT`
+              : seatError
+                ? "Seat Data Unavailable"
+                : "Loading..."}
+          </Typography>
+        </Box>
+      </Box>
       {/* Animated particles in background */}
       <Box
         sx={{

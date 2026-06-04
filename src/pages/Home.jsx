@@ -5,13 +5,14 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PlaceIcon from "@mui/icons-material/Place";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import EventSeatIcon from "@mui/icons-material/EventSeat";
 import CountdownTimer from "../components/CountdownTimer";
 import SpeakerCard from "../components/SpeakerCard";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
-import { getSpeakers } from "../services/api";
+import { getSpeakers, getSeatAvailability } from "../services/api";
 
 const SAMPLE_SPEAKERS = [
   {
@@ -48,6 +49,11 @@ const SAMPLE_SPEAKERS = [
 
 const Home = () => {
   const [speakers, setSpeakers] = useState(SAMPLE_SPEAKERS);
+  const [seatInfo, setSeatInfo] = useState({
+    seatsLeft: null,
+    registered: null,
+  });
+  const [seatError, setSeatError] = useState(false);
 
   useEffect(() => {
     getSpeakers()
@@ -57,6 +63,20 @@ const Home = () => {
         }
       })
       .catch(() => {});
+
+    getSeatAvailability()
+      .then((res) => {
+        const seatsLeft = Number(res.data?.seatsLeft);
+        const registered = res.data?.registered;
+        if (!Number.isNaN(seatsLeft)) {
+          setSeatInfo({ seatsLeft, registered });
+        } else {
+          setSeatError(true);
+        }
+      })
+      .catch(() => {
+        setSeatError(true);
+      });
   }, []);
 
   return (
@@ -67,7 +87,7 @@ const Home = () => {
         keywords="TEDx, VETIAS, innovation, ideas worth spreading, Beyond Boundaries"
       />
       {/* ── HERO ─────────────────────────────────────────── */}
-      <Hero />
+      <Hero seatInfo={seatInfo} seatError={seatError} />
 
       {/* ── COUNTDOWN ────────────────────────────────────── */}
       <Box
@@ -103,7 +123,7 @@ const Home = () => {
             {[
               {
                 icon: <CalendarMonthIcon fontSize="small" />,
-                text: "Sepember 12, 2026",
+                text: "September 12, 2026",
               },
               {
                 icon: <AccessTimeIcon fontSize="small" />,
@@ -112,6 +132,17 @@ const Home = () => {
               {
                 icon: <PlaceIcon fontSize="small" />,
                 text: "VETIAS Auditorium, Erode, Tamil Nadu, India",
+              },
+              {
+                icon: <EventSeatIcon fontSize="small" />,
+                text:
+                  seatInfo.seatsLeft != null
+                    ? seatInfo.seatsLeft === 0
+                      ? "Sold out"
+                      : `${seatInfo.seatsLeft} seats left`
+                    : seatError
+                      ? "Seat data unavailable"
+                      : "Loading seats...",
               },
             ].map((item, i) => (
               <Box
@@ -151,7 +182,7 @@ const Home = () => {
               />
               <Button
                 component="a"
-                href="https://kaving.vercel.app/"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScIOMF97ZRgezLBqF7PbjWYwLfiLyK4LDNsuEx8EOMWgwGdVA/viewform?usp=dialog"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="contained"
