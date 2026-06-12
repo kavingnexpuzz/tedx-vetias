@@ -7,7 +7,7 @@ import LogoLoop from "./LogoLoop";
 
 const seatLoopItems = [{ title: "Seats" }];
 
-const Hero = ({ seatInfo, seatError }) => {
+const Hero = () => {
   return (
     <Box
       sx={{
@@ -66,13 +66,7 @@ const Hero = ({ seatInfo, seatError }) => {
               letterSpacing: "0.08em",
             }}
           >
-            {seatInfo.seatsLeft != null
-              ? seatInfo.seatsLeft === 0
-                ? "🔴 SOLD OUT"
-                : `✓ ${seatInfo.seatsLeft} SEATS LEFT`
-              : seatError
-                ? "Seat Data Unavailable"
-                : "Loading..."}
+            HURRY UP Limited Seat Available
           </Typography>
         </Box>
       </Box>
@@ -111,12 +105,13 @@ const Hero = ({ seatInfo, seatError }) => {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 2,
-                  width: { xs: "180px", sm: "220px", md: "260px" },
+                  width: "auto",
+                  whiteSpace: "nowrap",
                   minHeight: "40px",
-                  px: 2,
+                  px: 3,
                   py: 1,
                   background:
-                    "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(229, 9, 20, 0.9) 100%)",
+                    "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(184, 7, 15, 0.95) 100%)",
                   borderRadius: "16px",
                   border: "2px solid rgba(255, 255, 255, 0.2)",
                   boxShadow: "0 10px 40px rgba(229, 9, 20, 0.25)",
@@ -124,6 +119,17 @@ const Hero = ({ seatInfo, seatError }) => {
                   fontFamily: "'DM Mono', monospace",
                   fontWeight: 700,
                   letterSpacing: "0.06em",
+                  animation: "pulseGlow 2.5s infinite alternate",
+                  "@keyframes pulseGlow": {
+                    "0%": {
+                      boxShadow: "0 4px 20px rgba(229, 9, 20, 0.3)",
+                      borderColor: "rgba(255, 255, 255, 0.25)",
+                    },
+                    "100%": {
+                      boxShadow: "0 8px 30px rgba(229, 9, 20, 0.75)",
+                      borderColor: "rgba(229, 9, 20, 0.6)",
+                    },
+                  }
                 }}
               >
                 <EventSeatIcon sx={{ fontSize: "2rem" }} />
@@ -132,13 +138,7 @@ const Hero = ({ seatInfo, seatError }) => {
                     fontSize: { xs: "0.95rem", sm: "1.05rem", md: "1.1rem" },
                   }}
                 >
-                  {seatInfo.seatsLeft != null
-                    ? seatInfo.seatsLeft === 0
-                      ? "🔴 SOLD OUT"
-                      : `✓ ${seatInfo.seatsLeft} SEATS LEFT`
-                    : seatError
-                      ? "Seat Data Unavailable"
-                      : "Loading..."}
+                  HURRY UP Limited Seat Available
                 </Typography>
               </Box>
             )}

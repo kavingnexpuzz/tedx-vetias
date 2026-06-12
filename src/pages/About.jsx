@@ -3,10 +3,30 @@ import { Box, Container, Typography, Grid } from "@mui/material";
 import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import SEO from "../components/SEO";
+import DNAAnimation from "../components/DNAAnimation";
 
 const About = () => {
   return (
-    <Box>
+    <Box sx={{ position: "relative", minHeight: "100vh", background: "#0a0a0a", overflow: "hidden" }}>
+      <Box
+        component="video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        src="/backgroundvideo.mp4"
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+          opacity: 0.15,
+          pointerEvents: "none",
+        }}
+      />
       <SEO
         title="About Us"
         description="Learn more about TEDx VETIAS, our history, and the passionate team dedicated to bringing ideas worth spreading to our community."
@@ -17,8 +37,8 @@ const About = () => {
           pt: 20,
           pb: 14,
           position: "relative",
-          background: "linear-gradient(180deg, #0f0f0f 0%, #0a0a0a 100%)",
-          overflow: "hidden",
+          background: "transparent",
+          zIndex: 1,
         }}
       >
         <Typography
@@ -80,7 +100,7 @@ const About = () => {
       </Box>
 
       {/* What is TED */}
-      <Box sx={{ py: 14 }}>
+      <Box sx={{ py: 14, position: "relative", zIndex: 1 }}>
         <Container maxWidth="lg">
           <Grid container spacing={8} alignItems="center">
             <Grid item xs={12} md={6}>
@@ -106,10 +126,10 @@ const About = () => {
                 talks are posted daily. TED's open translation project has made
                 TED Talks available in over 100 languages.
               </Typography>
-            </Grid>
-            <Grid item xs={12} md={6}>
+              
               <Box
                 sx={{
+                  mt: 5,
                   p: 4,
                   border: "1px solid rgba(229,9,20,0.15)",
                   position: "relative",
@@ -127,7 +147,7 @@ const About = () => {
                 <Typography
                   sx={{
                     fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: "4rem",
+                    fontSize: { xs: "2.5rem", sm: "3.5rem" },
                     color: "#E50914",
                     lineHeight: 1,
                     mb: 2,
@@ -144,12 +164,26 @@ const About = () => {
                 </Typography>
               </Box>
             </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  height: { xs: "400px", md: "500px" },
+                  width: "100%",
+                }}
+              >
+                <DNAAnimation />
+              </Box>
+            </Grid>
           </Grid>
         </Container>
       </Box>
 
       {/* About TEDx VETIAS */}
-      <Box sx={{ py: 14, background: "#080808" }}>
+      <Box sx={{ py: 14, background: "rgba(8, 8, 8, 0.45)", position: "relative", zIndex: 1 }}>
         <Container maxWidth="lg">
           <SectionTitle
             overline="Our Chapter"
@@ -185,7 +219,8 @@ const About = () => {
                       p: 4,
                       height: "100%",
                       border: "1px solid rgba(255,255,255,0.05)",
-                      background: "#0f0f0f",
+                      background: "rgba(15, 15, 15, 0.8)",
+                      backdropFilter: "blur(8px)",
                       position: "relative",
                       "&::after": {
                         content: '""',

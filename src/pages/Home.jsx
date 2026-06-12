@@ -12,7 +12,7 @@ import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
-import { getSpeakers, getSeatAvailability } from "../services/api";
+import { getSpeakers } from "../services/api";
 
 const SAMPLE_SPEAKERS = [
   {
@@ -49,11 +49,6 @@ const SAMPLE_SPEAKERS = [
 
 const Home = () => {
   const [speakers, setSpeakers] = useState(SAMPLE_SPEAKERS);
-  const [seatInfo, setSeatInfo] = useState({
-    seatsLeft: null,
-    registered: null,
-  });
-  const [seatError, setSeatError] = useState(false);
 
   useEffect(() => {
     getSpeakers()
@@ -63,20 +58,6 @@ const Home = () => {
         }
       })
       .catch(() => {});
-
-    getSeatAvailability()
-      .then((res) => {
-        const seatsLeft = Number(res.data?.seatsLeft);
-        const registered = res.data?.registered;
-        if (!Number.isNaN(seatsLeft)) {
-          setSeatInfo({ seatsLeft, registered });
-        } else {
-          setSeatError(true);
-        }
-      })
-      .catch(() => {
-        setSeatError(true);
-      });
   }, []);
 
   return (
@@ -87,7 +68,7 @@ const Home = () => {
         keywords="TEDx, VETIAS, innovation, ideas worth spreading, Beyond Boundaries"
       />
       {/* ── HERO ─────────────────────────────────────────── */}
-      <Hero seatInfo={seatInfo} seatError={seatError} />
+      <Hero />
 
       {/* ── COUNTDOWN ────────────────────────────────────── */}
       <Box
@@ -135,14 +116,7 @@ const Home = () => {
               },
               {
                 icon: <EventSeatIcon fontSize="small" />,
-                text:
-                  seatInfo.seatsLeft != null
-                    ? seatInfo.seatsLeft === 0
-                      ? "Sold out"
-                      : `${seatInfo.seatsLeft} seats left`
-                    : seatError
-                      ? "Seat data unavailable"
-                      : "Loading seats...",
+                text: "Limited Seats Available",
               },
             ].map((item, i) => (
               <Box

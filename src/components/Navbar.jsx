@@ -197,7 +197,7 @@ const Navbar = () => {
 
           <Button
             component={Link}
-            to="https://kaving.vercel.app/"
+            to="https://docs.google.com/forms/d/e/1FAIpQLScIOMF97ZRgezLBqF7PbjWYwLfiLyK4LDNsuEx8EOMWgwGdVA/viewform?usp=dialog"
             target="_blank"
             variant="contained"
             color="primary"
