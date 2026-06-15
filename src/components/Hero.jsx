@@ -38,14 +38,13 @@ const Hero = () => {
           maxWidth: 360,
           display: "none",
           width: "calc(100% - 32px)",
-          background:
-            "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(229, 9, 20, 0.85) 100%)",
-          backdropFilter: "blur(10px)",
-          py: 2.5,
-          px: { xs: 3, sm: 5 },
-          borderRadius: "12px",
-          border: "2px solid rgba(255, 255, 255, 0.2)",
-          boxShadow: "0 8px 32px rgba(229, 9, 20, 0.4)",
+          background: "rgba(15, 15, 15, 0.8)",
+          backdropFilter: "blur(12px)",
+          py: 2,
+          px: 3,
+          borderRadius: "9999px",
+          border: "1px solid rgba(229, 9, 20, 0.45)",
+          boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 9, 20, 0.15)",
         }}
       >
         <Box
@@ -53,21 +52,64 @@ const Hero = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 2,
+            gap: 1.5,
           }}
         >
-          <EventSeatIcon sx={{ color: "#fff", fontSize: "1.8rem" }} />
-          <Typography
+          <Box
             sx={{
-              fontFamily: "'DM Mono', monospace",
-              fontSize: { xs: "0.9rem", sm: "1.1rem" },
-              fontWeight: 700,
-              color: "#FFFFFF",
-              letterSpacing: "0.08em",
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+              background: "rgba(229, 9, 20, 0.12)",
+              border: "1px solid rgba(229, 9, 20, 0.3)",
+              borderRadius: "9999px",
+              px: 1.5,
+              py: 0.5,
             }}
           >
-            HURRY UP Limited Seat Available
-          </Typography>
+            <Box
+              sx={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                backgroundColor: "#E50914",
+                boxShadow: "0 0 8px #E50914",
+                animation: "dotPulse 1.5s infinite ease-in-out",
+                "@keyframes dotPulse": {
+                  "0%": { transform: "scale(0.8)", opacity: 0.5 },
+                  "50%": { transform: "scale(1.3)", opacity: 1 },
+                  "100%": { transform: "scale(0.8)", opacity: 0.5 }
+                }
+              }}
+            />
+            <EventSeatIcon sx={{ color: "#E50914", fontSize: "1.1rem" }} />
+          </Box>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Typography
+              sx={{
+                fontFamily: "'Bebas Neue', sans-serif",
+                fontSize: "1.2rem",
+                color: "#E50914",
+                letterSpacing: "0.08em",
+                lineHeight: 1,
+              }}
+            >
+              HURRY UP
+            </Typography>
+            <Typography
+              sx={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                color: "#FFFFFF",
+                letterSpacing: "0.02em",
+                lineHeight: 1,
+                textTransform: "uppercase",
+              }}
+            >
+              Limited Seats Available
+            </Typography>
+          </Box>
         </Box>
       </Box>
 
@@ -75,7 +117,6 @@ const Hero = () => {
         sx={{
           position: "absolute",
           left: 0,
-
           right: 0,
           top: "34%",
           zIndex: 10,
@@ -92,7 +133,7 @@ const Hero = () => {
             speed={90}
             direction="left"
             logoHeight={6}
-            gap={80}
+            gap={0}
             mt={900}
             hoverSpeed={0}
             fadeOut
@@ -103,43 +144,115 @@ const Hero = () => {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  gap: 2,
-                  width: "auto",
-                  whiteSpace: "nowrap",
-                  minHeight: "40px",
-                  px: 3,
-                  py: 1,
-                  background:
-                    "linear-gradient(135deg, rgba(229, 9, 20, 0.95) 0%, rgba(184, 7, 15, 0.95) 100%)",
-                  borderRadius: "16px",
-                  border: "2px solid rgba(255, 255, 255, 0.2)",
-                  boxShadow: "0 10px 40px rgba(229, 9, 20, 0.25)",
-                  color: "#FFFFFF",
-                  fontFamily: "'DM Mono', monospace",
-                  fontWeight: 700,
-                  letterSpacing: "0.06em",
-                  animation: "pulseGlow 2.5s infinite alternate",
-                  "@keyframes pulseGlow": {
-                    "0%": {
-                      boxShadow: "0 4px 20px rgba(229, 9, 20, 0.3)",
-                      borderColor: "rgba(255, 255, 255, 0.25)",
-                    },
-                    "100%": {
-                      boxShadow: "0 8px 30px rgba(229, 9, 20, 0.75)",
-                      borderColor: "rgba(229, 9, 20, 0.6)",
-                    },
-                  }
                 }}
               >
-                <EventSeatIcon sx={{ fontSize: "2rem" }} />
-                <Typography
+                {/* Elegant Glassmorphic Ticker Pill */}
+                <Box
                   sx={{
-                    fontSize: { xs: "0.95rem", sm: "1.05rem", md: "1.1rem" },
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                    width: "auto",
+                    whiteSpace: "nowrap",
+                    minHeight: "46px",
+                    px: { xs: 2.5, sm: 3 },
+                    py: 1,
+                    background: "rgba(10, 10, 10, 0.75)",
+                    backdropFilter: "blur(12px)",
+                    borderRadius: "9999px",
+                    border: "1px solid rgba(229, 9, 20, 0.45)",
+                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 9, 20, 0.15)",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    animation: "pulseGlow 3s infinite alternate",
+                    "@keyframes pulseGlow": {
+                      "0%": {
+                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5), 0 0 10px rgba(229, 9, 20, 0.15)",
+                        borderColor: "rgba(229, 9, 20, 0.4)",
+                      },
+                      "100%": {
+                        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5), 0 0 25px rgba(229, 9, 20, 0.45)",
+                        borderColor: "rgba(229, 9, 20, 0.8)",
+                      },
+                    },
+                    "&:hover": {
+                      transform: "scale(1.03) translateY(-1px)",
+                      borderColor: "#E50914",
+                      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.6), 0 0 30px rgba(229, 9, 20, 0.5)",
+                    },
+                    mr: 4
                   }}
                 >
-                  HURRY UP Limited Seat Available
-                </Typography>
+                  {/* Status Indicator Badge */}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                      background: "rgba(229, 9, 20, 0.12)",
+                      border: "1px solid rgba(229, 9, 20, 0.3)",
+                      borderRadius: "9999px",
+                      px: 1.5,
+                      py: 0.5,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: "50%",
+                        backgroundColor: "#E50914",
+                        boxShadow: "0 0 8px #E50914",
+                        animation: "dotPulse 1.5s infinite ease-in-out",
+                        "@keyframes dotPulse": {
+                          "0%": { transform: "scale(0.8)", opacity: 0.5 },
+                          "50%": { transform: "scale(1.3)", opacity: 1 },
+                          "100%": { transform: "scale(0.8)", opacity: 0.5 }
+                        }
+                      }}
+                    />
+                    <EventSeatIcon sx={{ color: "#E50914", fontSize: "1.05rem" }} />
+                  </Box>
+
+                  {/* Ticker Text Content */}
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "'Bebas Neue', sans-serif",
+                        fontSize: { xs: "1.1rem", sm: "1.3rem" },
+                        color: "#E50914",
+                        letterSpacing: "0.08em",
+                        lineHeight: 1,
+                      }}
+                    >
+                      HURRY UP
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: { xs: "0.8rem", sm: "0.9rem" },
+                        fontWeight: 700,
+                        color: "#FFFFFF",
+                        letterSpacing: "0.03em",
+                        lineHeight: 1,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Limited Seat Available
+                    </Typography>
+                  </Box>
+                </Box>
+
+                {/* Symmetric Separator Dot between pills */}
+                <Box
+                  sx={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    background: "rgba(229, 9, 20, 0.6)",
+                    boxShadow: "0 0 8px rgba(229, 9, 20, 0.8)",
+                    mr: 4
+                  }}
+                />
               </Box>
             )}
           />
