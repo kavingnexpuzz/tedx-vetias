@@ -32,11 +32,11 @@ const SAMPLE_SPEAKERS =[
   },
   {
     _id: '4',
-    name: 'Pragatheeswaran',
-    role: 'Tech Entrepreneur',
-    description: 'Founder of Nexpuzz Technologies, Pragatheeswaran works on innovative digital solutions empowering startups and modern businesses.',
-    topic: 'Startup Innovation',
-    photo: 'https://nexpuzztech.co.in/team/avatar-pragatheeswaran.png'
+    name: 'RamKumar',
+    role: 'Standup Comedian',
+    description: 'Ramkumar is a Chennai-based Tamil stand-up comedian and writer, widely known for his breakout character IT Manager Annachi',
+    topic: 'Corporate Comedian',
+    photo: 'https://yt3.googleusercontent.com/GwsR8WaU8TD9xNWJMJUjIvUGkBNIiDmf-Sy5-Ba4uqv-NZxMueC0vwygp7T_j9GZU1uu_Fkj1g=s900-c-k-c0x00ffffff-no-rj'
   },
   {
     _id: '5',
@@ -68,7 +68,7 @@ const SAMPLE_SPEAKERS =[
     role: 'Business Leader',
     description: 'Leading Sri Vinayaga Groups, Saravanan EVC focuses on sustainable business growth and empowering local industries.',
     topic: 'Business Growth & Vision',
-    photo: 'https://scontent.fmaa2-4.fna.fbcdn.net/v/t39.30808-6/579203226_122163884816764767_3943841623600952544_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=4cMd9diC4uUQ7kNvwEl42VG&_nc_oc=AdpEKpv81WskfBu0aaZCwkq8SR4il3hpwoqOr1YOVWN_trLukHjR0zcYTUJsMZgBG1pjuqqTceVQhea_K4WjozwZ&_nc_zt=23&_nc_ht=scontent.fmaa2-4.fna&_nc_gid=eqQCiYAb29MKvS5anXDZRw&_nc_ss=7b289&oh=00_Af4ydvHl4O3E6UIJhIGV53ambcxS7YtmBWtntFrHfBXDzw&oe=6A11094E'
+    photo: 'https://scontent-maa5-1.cdninstagram.com/v/t51.2885-19/466689158_484989797890302_3299860251686293788_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-maa5-1.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2gFpBvGQ9Y1m7ogu4VKqvXJnWu6A-58N73JFBESF-9kODEQaGTgT1HfwWCgEB9xCuQI&_nc_ohc=158ItSet7PEQ7kNvwGvpUnz&_nc_gid=eP7Way9jMPfR2xjMrGWMmw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af-UalFXIkcFvHbvIT02B30ypKe977lPPlHwDsrczeynPw&oe=6A36B152&_nc_sid=8b3546'
   },
   {
     _id: '9',

@@ -10,9 +10,9 @@ const FAQS = [
   {
     category: 'About the Event',
     items: [
-      { q: 'What is TEDx VETIAS?', a: 'TEDx VETIAS is an independently organized TED event licensed by TED. It is hosted annually at VETIAS College of Engineering in Chennai, bringing together speakers, performers, and thinkers to share ideas worth spreading.' },
-      { q: 'When and where will the event be held?', a: 'TEDx VETIAS 2025 will be held on March 15, 2025, from 9:00 AM to 6:00 PM at the VETIAS College Auditorium, Chennai - 600 001, Tamil Nadu, India.' },
-      { q: 'What is the theme for 2025?', a: '"Beyond Boundaries" — this year\'s theme explores how the most transformative ideas emerge when we dare to cross the borders of discipline, geography, and conventional thinking.' },
+      { q: 'What is TEDx VETIAS?', a: 'TEDx VETIAS is an independently organized TED event licensed by TED. It is hosted annually at VETIAS College  in Erode, bringing together speakers, performers, and thinkers to share ideas worth spreading.' },
+      { q: 'When and where will the event be held?', a: 'TEDx VETIAS 2026 will be held on September 13, 2026, from 9:00 AM to 6:00 PM at the VETIAS College Auditorium, Erode - 638012, Tamil Nadu, India.' },
+      { q: 'What is the theme for 2026?', a: '"Beyond Boundaries" — this year\'s theme explores how the most transformative ideas emerge when we dare to cross the borders of discipline, geography, and conventional thinking.' },
     ],
   },
   {

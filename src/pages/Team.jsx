@@ -6,31 +6,47 @@ import SEO from '../components/SEO';
 import { getTeam } from '../services/api';
 
 const SAMPLE_TEAM = [
-  { _id: '1', name: 'Paripoorna', position: 'Event Coordinator', department: 'Core Team', photo: '' },
-  { _id: '2', name: 'Karthika', position: 'Creative Director', department: 'Core Team', photo: '' },
-  { _id: '3', name: 'Logeshwaran', position: 'Head of Curation', department: 'Core Team', photo: '' },
-  { _id: '4', name: 'Piraneshvaran', position: 'Technical Lead', department: 'Core Team', photo: '' },
-  { _id: '5', name: 'Jishnu', position: 'Marketing Head', department: 'Core Team', photo: '' },
-  { _id: '6', name: 'Bhuvaneshwari', position: 'Logistics Manager', department: 'Core Team', photo: '' },
-  { _id: '7', name: 'Rithanya', position: 'Design Lead', department: 'Creative', photo: '' },
-  { _id: '8', name: 'Abdul Rahman', position: 'Social Media Manager', department: 'Marketing', photo: '' },
-  { _id: '9', name: 'Rishab', position: 'Finance Head', department: 'Operations', photo: '' },
-  { _id: '11', name: 'Sri Saravanan', position: 'Sponsorship Manager', department: 'Operations', photo: '' },
-  { _id: '12', name: 'Vigneswara', position: 'Volunteer Coordinator', department: 'Operations', photo: '' },
-  { _id: '13', name: 'Mythreye', position: 'Team Management', department: 'Core Team', photo: '' },
-  { _id: '10', name: 'Naveen', position: 'Videography Lead', department: 'Media', photo: '' },
-  { _id: '14', name: 'Kavin G', position: 'Web Development Lead', department: 'Creative', photo: 'https://kaving.vercel.app/images/kaving.jpg' },
-  { _id: '15', name: 'Mukilan', position: 'Venue Director', department: 'Operations', photo: '' },
-  { _id: '16', name: 'Anuprabha', position: 'Speakers', department: 'Operations', photo: '' },
-  { _id: '17', name: 'Lingesh Raja', position: 'Branding', department: 'Creative', photo: '' },
-  { _id: '18', name: 'MMouriya', position: 'Logistics', department: 'Operations', photo: '' },
-  { _id: '19', name: 'Vakshana', position: 'Social Media', department: 'Marketing', photo: '' },
-  { _id: '20', name: 'Lakshmi Prabha', position: 'Videography', department: 'Media', photo: '' },
-  { _id: '21', name: 'Divya', position: 'Audience + Experience', department: 'Operations', photo: '' },
+  { _id: '1', name: 'Paripoorna', position: 'Event Coordinator', department: 'Team Management', photo: ' https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/2CE494EE-0309-4449-B579-E00858A02BF4.jpg' },
+  { _id: '2', name: 'Karthika', position: 'Creative Director', department: 'Team Management', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/F142300E-F67A-4F51-8E60-407A371629D7.jpg' },
+  { _id: '3', name: 'Mythreye', position: 'Strategic Planning', department: 'Team Management', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/E3380C5A-814C-4873-9E74-46143A518354.jpg' },
+  { _id: '4', name: 'Mouriya', position: 'Delegation & Workflow', department: 'Team Management', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/8F2BBF48-829D-4CB2-9051-2A4306D67CAE.jpg' },
+  { _id: '5', name: 'Ezhilarasi', position: 'Conflict Resolution', department: 'Team Management', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/60D6B513-515C-43F1-BFBA-B9073EB0AF2F.jpg' },
+  { _id: '6', name: 'Mukilan', position: 'Facility Maintenance', department: 'Venue/Space', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/B3C916CC-E6F1-4D6C-A656-8E45D8A0FBB7.jpg' },
+  { _id: '7', name: 'Hariharan', position: 'In-House Assets', department: 'Venue/Space', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/3FFA9E03-42BB-4361-9F7B-2E2F59E14D84.jpg' },
+  { _id: '8', name: 'Pranesh G', position: 'Safety & Compliancer', department: 'Venue/Space', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/1A492BB3-26D8-4E4D-A8EC-B8586B406730.jpg' },
+  { _id: '9', name: 'Logeshwaran', position: 'Booking & Administration', department: 'Venue/Space', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/9114E916-9489-4E62-94EC-C62F9DD2F535.jpg' },
+  { _id: '11', name: 'Mithun Athith', position: 'Staffing', department: 'Venue/Space', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/2442D573-FCA7-46E9-9C9B-CD7C4F010B77.jpg' },
+  { _id: '12', name: 'Bhuvaneshwari', position: 'Curate the Agenda', department: 'Speakers', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/AD31DF9D-3336-4E2D-86BE-2B51653708C5.jpg' },
+  { _id: '13', name: 'Anuprabha', position: 'Speaker Sourcing', department: 'Speakers', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/01BA6D06-05CA-4A9D-AF39-FEA1B458A7D7.jpg' },
+  { _id: '10', name: 'Dharshini M S', position: 'Speaker Booking', department: 'Speakers', photo: '' },
+  { _id: '14', name: 'Rishab', position: 'Tech Management', department: 'Speakers', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/6B3F5D37-6070-4D3C-B0CA-32240A190A75.jpg '},
+  { _id: '15', name: 'Piraneshvaran', position: 'Logistics', department: 'Speakers', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/7C928A1D-AFC6-49ED-BDF3-0636895FAF09.jpg' },
+  { _id: '16', name: 'Abdual Rahuman', position: 'Promotions', department: 'Branding/Promotions', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/4A1795C5-70B4-4395-9A12-82FA559897C4.jpg' },
+  { _id: '17', name: 'Lingesh Raja', position: 'Branding', department: 'Branding/Promotions', photo: '' },
+  { _id: '18', name: 'Kishore', position: 'Promotions', department: 'Branding/Promotions', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/EE30BA2D-E655-4DBE-AE94-672C15FC629E.jpg' },
+  { _id: '19', name: 'Vigneshwara', position: 'Event Design', department: 'Audience/Experience', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/07FC074A-D014-4AB0-932C-B880147AAFB6.jpg' },
+  { _id: '20', name: 'Thanusri', position: 'Audience Strategy', department: 'Audience/Experience', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/27CCCD1C-2146-47C7-91B2-D2CB3F58A43D.jpg' },
+  { _id: '21', name: 'Dharshni l', position: 'Program Curation', department: 'Audience/Experience', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/57309608-4C19-4FC1-A173-7C76101D3AAE.jpg' },
+  { _id: '22', name: 'Divya', position: 'On-Site Execution', department: 'Audience/Experience', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/D982F24D-646B-4270-A483-D43CACC77CEB.jpg' },
+  { _id: '23', name: 'Kavin G', position: 'Asset Management', department: 'Video/Photography', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/E945C360-0F63-4082-8794-04DB45233C15.jpg' },
+  { _id: '24', name: 'Naveen', position: 'Photo/Video Organizer', department: 'Video/Photography', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/0D6821D2-DD76-4633-BC00-6B2F8E3D8A24.jpg' },
+  { _id: '25', name: 'Lakshmi Prabha', position: 'Storage & Backups', department: 'Video/Photography', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/3E52B930-7944-4CEF-902E-67AA29ABBCFC.jpg' },
+  { _id: '26', name: 'Abinaya', position: 'Videography', department: 'Video/Photography', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/79DA438D-BF53-495B-AA97-B059BE436E79.jpg' },
+  { _id: '27', name: 'Abdual Rahuman', position: 'Editor', department: 'Video/Photography', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/4A1795C5-70B4-4395-9A12-82FA559897C4.jpg' },
+  { _id: '28', name: 'Rithanya', position: 'Financial Reconciliation', department: 'PostEvent/Renewal', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/BC4DD809-B6ED-467E-A3C3-C2C8E226F5A9.jpg' },
+  { _id: '29', name: 'Vakshana', position: 'Data and Analytics', department: 'PostEvent/Renewal', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/2DD26BBD-B21F-42FF-91C6-F6676D8FF8A6.jpg' },
+  { _id: '30', name: 'kaviksha', position: 'Feedback Collection', department: 'PostEvent/Renewal', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/404971A5-EBE6-4D5D-BC8F-331DF86B9954.jpg' },
+  { _id: '31', name: 'paripoorna', position: 'Debriefing', department: 'PostEvent/Renewal', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/2CE494EE-0309-4449-B579-E00858A02BF4.jpg' },
+  { _id: '32', name: 'Rishab', position: 'Sponsor Outreach', department: 'Sponsers/Finances', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/6B3F5D37-6070-4D3C-B0CA-32240A190A75.jpg' },
+  { _id: '33', name: 'Piraneshvaran', position: 'Expense Tracking', department: 'Sponsers/Finances', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/7C928A1D-AFC6-49ED-BDF3-0636895FAF09.jpg' },
+  { _id: '34', name: 'Jishnu', position: 'Financial Reporting', department: 'Sponsers/Finances', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/0A0F956A-3B1D-4F35-BE55-6488C2079B99.jpg' },
+  { _id: '35', name: 'sri Saravanan', position: 'Negotiation', department: 'Sponsers/Finances', photo: 'https://vetiasportal.vetias.ac.in/Impreserp/Resx/StudImages/D969F70B-8537-4450-BDBE-44814713021B.jpg' },
+ 
+  
   
 ];
 
-const DEPARTMENTS = ['All', 'Core Team', 'Creative', 'Marketing', 'Operations', 'Media'];
+const DEPARTMENTS = ['All', 'Team Management', 'Venue/Space', 'Speakers', 'Branding/Promotions', 'Audience/Experience', 'Video/Photography', 'PostEvent/Renewal', 'Sponsers/Finances'];
 
 const Team = () => {
   const [team, setTeam] = useState([]);

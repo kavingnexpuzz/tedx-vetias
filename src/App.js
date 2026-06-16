@@ -16,6 +16,7 @@ import Team from './pages/Team';
 import FAQ from './pages/FAQ';
 import Sponsors from './pages/Sponsors';
 import SplashCursor from './components/SplashCursor';
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -66,6 +67,7 @@ function App() {
       <SplashCursor COLOR="#E50914" />
       <AuthProvider>
         <Router>
+          <ScrollToTop />
           <Routes>
             {/* Public Routes */}
             <Route element={<MainLayout />}>

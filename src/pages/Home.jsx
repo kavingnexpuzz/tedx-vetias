@@ -156,7 +156,7 @@ const Home = () => {
           <Grid container spacing={8} alignItems="center">
             <Grid item xs={12} md={5}>
               <SectionTitle
-                overline="Theme 2025"
+                overline="Theme 2026"
                 title={
                   <>
                     Beyond <span>Boundaries</span>

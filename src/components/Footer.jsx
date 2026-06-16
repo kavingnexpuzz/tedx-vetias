@@ -154,7 +154,7 @@ const Footer = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               {[
                 { label: 'tedxvetias@college.edu', href: 'mailto:tedxvetias@college.edu' },
-                { label: '+91 98765 43210', href: 'tel:+919876543210' },
+                { label: '+91 90479 51115', href: 'tel:+9190479 51115' },
                 { label: 'VET Institute of Arts and Sciences, Erode - 638012', href: '#' },
               ].map((c, i) => (
                 <Box key={i} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
