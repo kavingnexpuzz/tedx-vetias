@@ -18,9 +18,11 @@ const SpeakerCard = ({ speaker, delay = 0 }) => {
         sx={{
           position: 'relative',
           overflow: 'hidden',
+           borderRadius: '16px',
           cursor: 'default',
           '&:hover .speaker-overlay': { opacity: 1, transform: 'translateY(0)' },
           '&:hover .speaker-img-bg': { transform: 'scale(1.06)' },
+          
         }}
       >
         {/* Image / Avatar */}
@@ -44,6 +46,7 @@ const SpeakerCard = ({ speaker, delay = 0 }) => {
                 objectFit: 'cover',
                 transition: 'transform 0.6s cubic-bezier(0.22,1,0.36,1)',
                 display: 'block',
+                
               }}
             />
           ) : (
@@ -65,6 +68,7 @@ const SpeakerCard = ({ speaker, delay = 0 }) => {
                   fontSize: '6rem',
                   color: 'rgba(229,9,20,0.25)',
                   letterSpacing: '0.05em',
+                  
                 }}
               >
                 {initials}
@@ -80,7 +84,7 @@ const SpeakerCard = ({ speaker, delay = 0 }) => {
               left: 0,
               width: 4,
               height: '100%',
-              background: '#E50914',
+              background: '#1a1818ff',
             }}
           />
 
@@ -90,7 +94,7 @@ const SpeakerCard = ({ speaker, delay = 0 }) => {
             sx={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to top, rgba(229,9,20,0.92) 0%, rgba(10,10,10,0.6) 100%)',
+              background: 'linear-gradient(to top, rgba(133, 123, 123, 0.92) 0%, rgba(10,10,10,0.6) 100%)',
               opacity: 0,
               transform: 'translateY(8px)',
               transition: 'opacity 0.4s ease, transform 0.4s ease',
