@@ -31,7 +31,7 @@ const TeamCard = ({ member, delay = 0 }) => {
             borderColor: 'rgba(255, 255, 255, 0.08)',
             boxShadow: '0 20px 45px 5px rgba(229, 9, 20, 0.85)',
             '& .avatar-container': {
-              borderColor: '#E50914',
+              borderColor: '#ede7e7ff',
               transform: 'scale(1.03)',
               boxShadow: '0 0 20px rgba(229, 9, 20, 0.4)',
             }
