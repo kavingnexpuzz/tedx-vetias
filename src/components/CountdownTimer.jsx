@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 
-const EVENT_DATE = new Date('2026-09-12T09:00:00');
+const EVENT_DATE = new Date('2026-09-25T09:00:00');
 
 const pad = (n) => String(n).padStart(2, '0');
 

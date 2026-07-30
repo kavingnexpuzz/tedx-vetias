@@ -147,17 +147,6 @@ const Sponsors = () => {
               </Grid>
             ))}
           </Grid>
-
-          <Button
-            component="a"
-            href="mailto:tedxvetias@college.edu"
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{ px: 6, py: 1.75, fontSize: '0.8rem' }}
-          >
-            Request Sponsorship Prospectus
-          </Button>
         </Container>
       </Box>
     </Box>

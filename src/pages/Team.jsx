@@ -189,16 +189,6 @@ const Team = () => {
           <Typography variant="h3" sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' }, mb: 2 }}>
             Join the <Box component="span" sx={{ color: '#E50914' }}>Crew</Box>
           </Typography>
-          <Typography sx={{ color: '#666', lineHeight: 1.8, mb: 4 }}>
-            Volunteer applications open two months before the event. Be part of something that sparks minds and changes lives.
-          </Typography>
-          <Typography
-            component="a"
-            href="mailto:tedxvetias@college.edu"
-            sx={{ color: '#E50914', fontFamily: "'DM Mono', monospace", fontSize: '0.85rem', letterSpacing: '0.1em', textDecoration: 'none', borderBottom: '1px solid #E50914', pb: 0.5 }}
-          >
-            Apply to Volunteer
-          </Typography>
         </Container>
       </Box>
     </Box>

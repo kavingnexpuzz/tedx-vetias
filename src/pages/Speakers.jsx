@@ -62,13 +62,13 @@ const SAMPLE_SPEAKERS = [
   },
   {
     _id: "7",
-    name: "Arthi Raguram",
-    role: "Founder, Deyga",
+    name: "​M S Aishwarya",
+    role: "Tamil Nadu State Cricketer",
     description:
-      "Arthi Raguram built Deyga into a trusted natural skincare brand by combining traditional wellness practices with modern branding.",
-    topic: "Building Authentic Brands",
+      "​M S Aishwarya is a Tamil Nadu state cricketer, top-order batter, and India’s 4th fastest bowler.",
+    topic: "Cricket & Sports Excellence",
     photo:
-      "https://www.theweekendleader.com/admin/upload/07_05_2022_11_46_26_Arthi_Raghuram_Deyga2.webp",
+      "images/aiswarya.jpeg",
   },
   {
     _id: "8",
