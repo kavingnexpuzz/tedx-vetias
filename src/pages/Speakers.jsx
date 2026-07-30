@@ -49,7 +49,7 @@ const SAMPLE_SPEAKERS = [
     description:
       "Dr C Palanivelu pioneer in laparoscopic cancer operation and advanced laparoscopic operation has innovated many new operations first time in the world. ",
     topic: "Laparoscopic Surgery & Medical Innovation",
-    photo: "images/palanivel.png",
+    photo: "images/Palanivel.png",
   },
   {
     _id: "6",
@@ -87,7 +87,7 @@ const SAMPLE_SPEAKERS = [
     description:
       "Sonu Satheesh Kumar is a versatile Kuchipudi dancer and a popular TV artist ,well known for her dance performances in India & abroad.",
     topic: "Kuchipudi Dance & Cultural Heritage",
-    photo: "images/sonaSathees.jpeg",
+    photo: "images/SonaSathees.jpeg",
   },
   {
     _id: "10",
