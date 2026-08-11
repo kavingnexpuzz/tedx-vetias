@@ -22,7 +22,7 @@ const SAMPLE_SPEAKERS = [
     description:
       "I am an Adjunct Professor in the Aerospace Department, Defence Institute of Advanced Technology (DIAT), Deemed University under Ministry of Defence, Pune in addition to my regular official responsibilities since 2024...",
     topic: "Aerospace Engineering & Research",
-    photo: "images/DrRSanthanam.png",
+    photo: "images/santhanam.jpeg",
   },
   {
     _id: "3",
