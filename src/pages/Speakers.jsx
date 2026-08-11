@@ -91,11 +91,11 @@ const SAMPLE_SPEAKERS = [
   {
     _id: "11",
     name: "M. YUVARAJA",
-    role: "Politician & Businessman",
+    role: "Entrepreneur",
     description:
       "A prominent political figure from Erode, M. Yuvaraja has a multi-decade career in public service, having transitioned from leading the Tamil Maanila Congress (TMC) youth wing to contesting elections with the BJP.",
     topic: "Grassroots Political Leadership and Regional Governance",
-    photo:"images/yuvaraj.png",
+    photo: "images/yuvaraj.png",
   },
 ];
 
