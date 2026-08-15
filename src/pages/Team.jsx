@@ -108,7 +108,105 @@ const SAMPLE_TEAM = [
     name: "Madhumitha",
     position: "Volunteer",
     department: "PostEvent/Renewal",
-    photo: "/images/mathu.jpeg",
+    photo: "/images/mathu.jpg",
+  },
+  {
+    _id: "15",
+    name: "Dharshini MS",
+    position: "Volunteer",
+    department: "Venue/Space",
+    photo: "/images/dharsini.jpeg",
+  },
+  {
+    _id: "16",
+    name: "Vakshana",
+    position: "Volunteer",
+    department: "Branding/Promotions",
+    photo: "/images/vakshana.jpeg",
+  },
+  {
+    _id: "17",
+    name: "Lakshmi Prabha",
+    position: "Volunteer",
+    department: "PostEvent/Renewal",
+    photo: "/images/laksmi.jpeg",
+  },
+  {
+    _id: "18",
+    name: "Abinaya",
+    position: "Volunteer",
+    department: "Team Management",
+    photo: "/images/abi.jpeg",
+  },
+  {
+    _id: "19",
+    name: "Mythreye",
+    position: "Volunteer",
+    department: "Venue/Space",
+    photo: "/images/mythre.jpeg",
+  },
+  {
+    _id: "20",
+    name: "Mouriya",
+    position: "Volunteer",
+    department: "Branding/Promotions",
+    photo: "/images/mouriya.jpeg",
+  },
+  {
+    _id: "21",
+    name: "Ezhilarasi",
+    position: "Volunteer",
+    department: "PostEvent/Renewal",
+    photo: "/images/ezli.jpeg",
+  },
+  {
+    _id: "22",
+    name: "Dharshini L",
+    position: "Volunteer",
+    department: "Venue/Space",
+    photo: "/images/dharsinil.jpeg",
+  },
+  {
+    _id: "23",
+    name: "Kaviksha",
+    position: "Volunteer",
+    department: "Branding/Promotions",
+    photo: "/images/kavi.jpeg",
+  },
+  {
+    _id: "24",
+    name: "Divya",
+    position: "Volunteer",
+    department: "PostEvent/Renewal",
+    photo: "/images/diviya.jpeg",
+  },
+  {
+    _id: "25",
+    name: "Janani VM",
+    position: "Operations Head",
+    department: "Venue/Space",
+    photo: "/images/janani.jpeg",
+  },
+  {
+    _id: "26",
+    name: "Lathika A",
+    position: "Operations Coordinator",
+    department: "Team Management",
+    photo: "/images/lathika.jpeg",
+  },
+  {
+    _id: "27",
+    name: "Kavin G",
+    position: "Operations Manager",
+    department: "Team Management",
+    photo: "/images/kaving.png",
+  },
+  {
+    _id: "28",
+    name: "Mithunathith R",
+    position: "Operations Support",
+    department: "PostEvent/Renewal",
+    photo: "/images/mithun.png",
   },
 ];
 
@@ -117,8 +215,7 @@ const DEPARTMENTS = [
   "Team Management",
   "Venue/Space",
   "Branding/Promotions",
-   "PostEvent/Renewal",
-  
+  "PostEvent/Renewal",
 ];
 
 const Team = () => {
@@ -154,10 +251,15 @@ const Team = () => {
     m.position.toLowerCase().includes("volunteer"),
   );
 
+  const operationsTeam = filtered.filter((m) =>
+    m.position.toLowerCase().includes("operations"),
+  );
+
   const coreTeam = filtered.filter(
     (m) =>
       !leadership.some((l) => l._id === m._id) &&
-      !volunteers.some((v) => v._id === m._id),
+      !volunteers.some((v) => v._id === m._id) &&
+      !operationsTeam.some((o) => o._id === m._id),
   );
 
   return (
@@ -321,6 +423,41 @@ const Team = () => {
                   </Box>
                   <Grid container spacing={4}>
                     {coreTeam.map((member, i) => (
+                      <Grid item xs={12} sm={6} md={4} lg={3} key={member._id}>
+                        <TeamCard member={member} delay={(i % 4) * 0.08} />
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+              )}
+
+              {/* Operations Section */}
+              {operationsTeam.length > 0 && (
+                <Box sx={{ mb: 10 }}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      mb: 5,
+                      borderLeft: "4.5px solid #E50914",
+                      pl: 2,
+                    }}
+                  >
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        fontWeight: 700,
+                        fontSize: { xs: "1.6rem", md: "2rem" },
+                        color: "#ffffff",
+                        fontFamily: "'DM Sans', sans-serif",
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Operations Team
+                    </Typography>
+                  </Box>
+                  <Grid container spacing={4}>
+                    {operationsTeam.map((member, i) => (
                       <Grid item xs={12} sm={6} md={4} lg={3} key={member._id}>
                         <TeamCard member={member} delay={(i % 4) * 0.08} />
                       </Grid>
