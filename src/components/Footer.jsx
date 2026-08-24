@@ -30,26 +30,33 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        background: '#080808',
-        borderTop: '1px solid rgba(229,9,20,0.15)',
+        background: "#080808",
+        borderTop: "1px solid rgba(229,9,20,0.15)",
         pt: 10,
         pb: 4,
-        mt: 'auto',
+        mt: "auto",
       }}
     >
-      <Box sx={{ maxWidth: 1200, mx: 'auto', px: { xs: 3, md: 6 } }}>
+      <Box sx={{ maxWidth: 1200, mx: "auto", px: { xs: 3, md: 6 } }}>
         <Grid container spacing={6}>
           {/* Brand */}
           <Grid item xs={12} md={4}>
             <TEDxLogo size={30} />
             <Typography
               variant="body2"
-              sx={{ color: '#666', mt: 3, lineHeight: 1.9, maxWidth: 300, fontSize: '0.88rem' }}
+              sx={{
+                color: "#666",
+                mt: 3,
+                lineHeight: 1.9,
+                maxWidth: 300,
+                fontSize: "0.88rem",
+              }}
             >
-              TEDx VETIAS is an independently organized TED event at VETIAS College. We bring together
-              brilliant minds to share ideas that matter — locally organized, globally inspired.
+              TEDx VETIAS is an independently organized TED event at VETIAS
+              College. We bring together brilliant minds to share ideas that
+              matter — locally organized, globally inspired.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 1, mt: 3 }}>
+            <Box sx={{ display: "flex", gap: 1, mt: 3 }}>
               {SOCIALS.map((s) => (
                 <IconButton
                   key={s.label}
@@ -60,13 +67,17 @@ const Footer = () => {
                   aria-label={s.label}
                   size="small"
                   sx={{
-                    color: '#555',
-                    border: '1px solid #222',
+                    color: "#555",
+                    border: "1px solid #222",
                     borderRadius: 0,
                     width: 36,
                     height: 36,
-                    '&:hover': { color: '#E50914', borderColor: '#E50914', background: 'rgba(229,9,20,0.05)' },
-                    transition: 'all 0.3s ease',
+                    "&:hover": {
+                      color: "#E50914",
+                      borderColor: "#E50914",
+                      background: "rgba(229,9,20,0.05)",
+                    },
+                    transition: "all 0.3s ease",
                   }}
                 >
                   {s.icon}
@@ -80,29 +91,29 @@ const Footer = () => {
             <Typography
               sx={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: '1.1rem',
-                letterSpacing: '0.1em',
-                color: '#f0f0f0',
+                fontSize: "1.1rem",
+                letterSpacing: "0.1em",
+                color: "#f0f0f0",
                 mb: 3,
               }}
             >
               Quick Links
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.2 }}>
               {QUICK_LINKS.slice(0, 4).map((l) => (
                 <Link
                   key={l.path}
                   to={l.path}
-                  style={{ textDecoration: 'none' }}
+                  style={{ textDecoration: "none" }}
                 >
                   <Typography
                     variant="body2"
                     sx={{
-                      color: '#666',
-                      fontSize: '0.84rem',
-                      letterSpacing: '0.05em',
-                      transition: 'color 0.2s',
-                      '&:hover': { color: '#E50914' },
+                      color: "#666",
+                      fontSize: "0.84rem",
+                      letterSpacing: "0.05em",
+                      transition: "color 0.2s",
+                      "&:hover": { color: "#E50914" },
                     }}
                   >
                     {l.label}
@@ -116,20 +127,30 @@ const Footer = () => {
             <Typography
               sx={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: '1.1rem',
-                letterSpacing: '0.1em',
-                color: '#f0f0f0',
+                fontSize: "1.1rem",
+                letterSpacing: "0.1em",
+                color: "#f0f0f0",
                 mb: 3,
               }}
             >
               More
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1.2 }}>
               {QUICK_LINKS.slice(4).map((l) => (
-                <Link key={l.path} to={l.path} style={{ textDecoration: 'none' }}>
+                <Link
+                  key={l.path}
+                  to={l.path}
+                  style={{ textDecoration: "none" }}
+                >
                   <Typography
                     variant="body2"
-                    sx={{ color: '#666', fontSize: '0.84rem', letterSpacing: '0.05em', '&:hover': { color: '#E50914' }, transition: 'color 0.2s' }}
+                    sx={{
+                      color: "#666",
+                      fontSize: "0.84rem",
+                      letterSpacing: "0.05em",
+                      "&:hover": { color: "#E50914" },
+                      transition: "color 0.2s",
+                    }}
                   >
                     {l.label}
                   </Typography>
@@ -143,27 +164,36 @@ const Footer = () => {
             <Typography
               sx={{
                 fontFamily: "'Bebas Neue', sans-serif",
-                fontSize: '1.1rem',
-                letterSpacing: '0.1em',
-                color: '#f0f0f0',
+                fontSize: "1.1rem",
+                letterSpacing: "0.1em",
+                color: "#f0f0f0",
                 mb: 3,
               }}
             >
               Get In Touch
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
               {[
-                { label: 'tedxvetias@college.edu', href: 'mailto:tedxvetias@college.edu' },
-                { label: '+91 90479 51115', href: 'tel:+9190479 51115' },
-                { label: 'VET Institute of Arts and Sciences, Erode - 638012', href: '#' },
+                {
+                  label: "tedx@vetias.ac.in",
+                  href: "mailto:tedx@vetias.ac.in",
+                },
+                { label: "+91 90479 51115", href: "tel:+9190479 51115" },
+                {
+                  label: "VET Institute of Arts and Sciences, Erode - 638012",
+                  href: "#",
+                },
               ].map((c, i) => (
-                <Box key={i} sx={{ display: 'flex', gap: 1.5, alignItems: 'flex-start' }}>
+                <Box
+                  key={i}
+                  sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}
+                >
                   <Box
                     sx={{
                       width: 4,
                       height: 4,
-                      borderRadius: '50%',
-                      background: '#E50914',
+                      borderRadius: "50%",
+                      background: "#E50914",
                       mt: 0.8,
                       flexShrink: 0,
                     }}
@@ -173,12 +203,12 @@ const Footer = () => {
                     href={c.href}
                     variant="body2"
                     sx={{
-                      color: '#666',
-                      fontSize: '0.84rem',
-                      textDecoration: 'none',
+                      color: "#666",
+                      fontSize: "0.84rem",
+                      textDecoration: "none",
                       lineHeight: 1.5,
-                      '&:hover': { color: '#E50914' },
-                      transition: 'color 0.2s',
+                      "&:hover": { color: "#E50914" },
+                      transition: "color 0.2s",
                     }}
                   >
                     {c.label}
@@ -189,21 +219,27 @@ const Footer = () => {
           </Grid>
         </Grid>
 
-        <Divider sx={{ mt: 8, mb: 4, borderColor: 'rgba(255,255,255,0.06)' }} />
+        <Divider sx={{ mt: 8, mb: 4, borderColor: "rgba(255,255,255,0.06)" }} />
 
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            justifyContent: 'space-between',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: "space-between",
+            alignItems: "center",
             gap: 2,
           }}
         >
-          <Typography variant="caption" sx={{ color: '#444', letterSpacing: '0.08em' }}>
+          <Typography
+            variant="caption"
+            sx={{ color: "#444", letterSpacing: "0.08em" }}
+          >
             © {new Date().getFullYear()} TEDx VETIAS. All rights reserved.
           </Typography>
-          <Typography variant="caption" sx={{ color: '#333', letterSpacing: '0.06em' }}>
+          <Typography
+            variant="caption"
+            sx={{ color: "#333", letterSpacing: "0.06em" }}
+          >
             This event is operated under license from TED.
           </Typography>
         </Box>

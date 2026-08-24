@@ -110,7 +110,7 @@ const Navbar = () => {
 
             <Button
               component={Link}
-              to="https://docs.google.com/forms/d/e/1FAIpQLScIOMF97ZRgezLBqF7PbjWYwLfiLyK4LDNsuEx8EOMWgwGdVA/viewform?usp=dialog"
+              to="https://docs.google.com/forms/d/e/1FAIpQLSfEMlIOThKps2w19BOhnUXfVOqipyk1fLT_2DpQSdokakUlgQ/viewform?usp=dialog"
               target="__blank"
               variant="contained"
               color="primary"
@@ -197,7 +197,7 @@ const Navbar = () => {
 
           <Button
             component={Link}
-            to="https://docs.google.com/forms/d/e/1FAIpQLScIOMF97ZRgezLBqF7PbjWYwLfiLyK4LDNsuEx8EOMWgwGdVA/viewform?usp=dialog"
+            to="https://docs.google.com/forms/d/e/1FAIpQLSfEMlIOThKps2w19BOhnUXfVOqipyk1fLT_2DpQSdokakUlgQ/viewform?usp=dialog"
             target="_blank"
             variant="contained"
             color="primary"

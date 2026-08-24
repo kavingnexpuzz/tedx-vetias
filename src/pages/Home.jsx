@@ -45,15 +45,15 @@ const SAMPLE_SPEAKERS = [
   },
 ];
 
-const SAMPLE_SPONSORS = [
-  { name: "MilkyMist", category: "Title Sponsor" },
-  { name: "A2D Channel", category: "Media Partner" },
-  { name: "VETIAS Institutions", category: "Institutional Sponsor" },
-  { name: "Google Developer Groups", category: "Tech Partner" },
-  { name: "Microsoft Spark", category: "Innovation Partner" },
-  { name: "Red Bull India", category: "Beverage Partner" },
-  { name: "Spotify", category: "Audio Partner" },
-];
+// const SAMPLE_SPONSORS = [
+//   { name: "MilkyMist", category: "Title Sponsor" },
+//   { name: "A2D Channel", category: "Media Partner" },
+//   { name: "VETIAS Institutions", category: "Institutional Sponsor" },
+//   { name: "Google Developer Groups", category: "Tech Partner" },
+//   { name: "Microsoft Spark", category: "Innovation Partner" },
+//   { name: "Red Bull India", category: "Beverage Partner" },
+//   { name: "Spotify", category: "Audio Partner" },
+// ];
 
 const Home = () => {
   const [speakers, setSpeakers] = useState(SAMPLE_SPEAKERS);
@@ -164,7 +164,7 @@ const Home = () => {
               />
               <Button
                 component="a"
-                href="https://docs.google.com/forms/d/e/1FAIpQLScIOMF97ZRgezLBqF7PbjWYwLfiLyK4LDNsuEx8EOMWgwGdVA/viewform?usp=dialog"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfEMlIOThKps2w19BOhnUXfVOqipyk1fLT_2DpQSdokakUlgQ/viewform?usp=dialog"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="contained"
@@ -296,7 +296,7 @@ const Home = () => {
       </Box>
 
       {/* ── SPONSORS ─────────────────────────────────────── */}
-      <Box
+      {/* <Box
         sx={{
           py: 12,
           background: "rgba(10,10,10,0.4)",
@@ -333,7 +333,7 @@ const Home = () => {
                   alignItems: "center",
                 }}
               >
-                {/* Sponsor Card */}
+                
                 <Box
                   sx={{
                     display: "flex",
@@ -383,7 +383,7 @@ const Home = () => {
                   </Typography>
                 </Box>
 
-                {/* Separation symbol */}
+                
                 <Box
                   sx={{
                     width: 6,
@@ -398,7 +398,7 @@ const Home = () => {
             )}
           />
         </Box>
-      </Box>
+      </Box> */}
 
       {/* ── STATS ────────────────────────────────────────── */}
       <Box

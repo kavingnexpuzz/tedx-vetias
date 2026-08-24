@@ -174,7 +174,7 @@ const Speakers = () => {
             href="mailto:tedxvetias@college.edu"
             sx={{ color: '#E50914', fontFamily: "'DM Mono', monospace", fontSize: '0.85rem', letterSpacing: '0.1em', textDecoration: 'none', borderBottom: '1px solid #E50914', pb: 0.5 }}
           >
-            tedxvetias@college.edu
+            tedx@vetias.ac.in
           </Typography>
         </Container>
       </Box>
