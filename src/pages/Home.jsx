@@ -12,7 +12,6 @@ import SectionTitle from "../components/SectionTitle";
 import ScrollReveal from "../components/ScrollReveal";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
-import LogoLoop from "../components/LogoLoop";
 import { getSpeakers } from "../services/api";
 
 const SAMPLE_SPEAKERS = [
