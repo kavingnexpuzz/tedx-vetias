@@ -77,7 +77,7 @@ const SAMPLE_SPEAKERS = [
     description:
       "Sonu Satheesh Kumar is a versatile Kuchipudi dancer and a popular TV artist ,well known for her dance performances in India & abroad.",
     topic: "Kuchipudi Dance & Cultural Heritage",
-    photo: "images/SonaSathees.jpeg",
+    photo: "images/SonaSathees.png",
   },
   {
     _id: "10",
@@ -96,6 +96,15 @@ const SAMPLE_SPEAKERS = [
       "A prominent political figure from Erode, M. Yuvaraja has a multi-decade career in public service, having transitioned from leading the Tamil Maanila Congress (TMC) youth wing to contesting elections with the BJP.",
     topic: "Grassroots Political Leadership and Regional Governance",
     photo: "images/yuvaraj.png",
+  },
+  {
+    _id: "12",
+    name: "Sai Vignesh",
+    role: "Playback Singer, and Musician",
+    description:
+      "Sai Vignesh is a talented playback singer and musician, known for his melodious voice and contributions to the music industry.",
+    topic: "Music & Arts",
+    photo: "images/saivignesh.png",
   },
 ];
 
