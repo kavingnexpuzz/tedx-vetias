@@ -1,66 +1,68 @@
 import React from "react";
+import { Box } from "@mui/material";
 
 const TEDxLogo = ({
-  width = 280,
-  height = 80,
+  size = 28,
   tedColor = "#E62B1E",
   textColor = "#FFFFFF",
   backgroundColor = "transparent",
+  style = {},
+  className = "",
 }) => {
   return (
-    <div
-      style={{
-        background: backgroundColor,
+    <Box
+      className={className}
+      sx={{
         display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "12px 20px",
+        alignItems: "baseline",
+        background: backgroundColor,
+        userSelect: "none",
+        lineHeight: 1,
+        fontFamily: "Arial, Helvetica, sans-serif",
+        ...style,
       }}
     >
-      <svg
-        width={width}
-        height={height}
-        viewBox="0 0 420 90"
-        xmlns="http://www.w3.org/2000/svg"
+      <Box
+        component="span"
+        sx={{
+          color: tedColor,
+          fontWeight: 800,
+          fontSize: `${size}px`,
+          letterSpacing: "-0.02em",
+          lineHeight: 1,
+        }}
       >
-        {/* TEDx */}
-        <text
-          x="10"
-          y="58"
-          fontSize="52"
-          fontWeight="700"
-          fontFamily="Arial, Helvetica, sans-serif"
-          fill={tedColor}
-        >
-          TED
-        </text>
-
-        <text
-          x="118"
-          y="52"
-          fontSize="28"
-          fontWeight="600"
-          fontFamily="Arial, Helvetica, sans-serif"
-          fill={tedColor}
+        TED
+        <Box
+          component="span"
+          sx={{
+            fontSize: "0.62em",
+            fontWeight: 700,
+            textTransform: "lowercase",
+            verticalAlign: "0.08em",
+            ml: "-0.02em",
+            mr: "0.22em",
+          }}
         >
           x
-        </text>
-
-        {/* VETIAS */}
-        <text
-          x="145"
-          y="58"
-          fontSize="44"
-          fontWeight="300"
-          fontFamily="Arial, Helvetica, sans-serif"
-          fill={textColor}
-          letterSpacing="1"
-        >
-          VETIAS
-        </text>
-      </svg>
-    </div>
+        </Box>
+      </Box>
+      <Box
+        component="span"
+        sx={{
+          color: textColor,
+          fontWeight: 400,
+          fontSize: `${size * 0.9}px`,
+          letterSpacing: "0.04em",
+          textTransform: "uppercase",
+          lineHeight: 1,
+        }}
+      >
+        VETIAS
+      </Box>
+    </Box>
   );
 };
 
 export default TEDxLogo;
+
