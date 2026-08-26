@@ -115,6 +115,15 @@ const SAMPLE_SPEAKERS = [
     topic: "Literature & Identity",
     photo: "images/AB.png",
   },
+  {
+    _id: "14",
+    name: "S. Vignesh",
+    role: "Manager - HR & Admin (Heading Perundurai Plant), Britannia Industries",
+    description:
+      "To handle a challenging role in an organization, where I can learn and contribute, build strong relations with my team, work towards the team’s goals and thereby help the organization to achieve its goals and ensure they exceed customer’s expectations.",
+    topic: "HR & Plant Management",
+    photo: "images/HR.jpeg",
+  },
 ];
 
 const Speakers = () => {
