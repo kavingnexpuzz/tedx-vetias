@@ -81,10 +81,8 @@ const About = () => {
             <br />
             <Box component="span" sx={{ color: "#E50914" }}>
               TED<Box component="span" sx={{ fontFamily: "'DM Sans', sans-serif", textTransform: "lowercase", fontSize: "0.72em", verticalAlign: "0.06em" }}>x</Box>
-            </Box>{" "}
-            <Box component="span" sx={{ color: "#FFFFFF" }}>
-              VETIAS
             </Box>
+            VETIAS
           </Typography>
           <Typography
             sx={{
