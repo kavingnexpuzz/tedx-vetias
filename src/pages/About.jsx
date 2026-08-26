@@ -80,7 +80,8 @@ const About = () => {
             About
             <br />
             <Box component="span" sx={{ color: "#E50914" }}>
-              TEDx
+              TED<Box component="span" sx={{ fontFamily: "'DM Sans', sans-serif", textTransform: "lowercase", fontSize: "0.72em", verticalAlign: "0.06em" }}>x</Box>
+              VETIAS
             </Box>
           </Typography>
           <Typography
@@ -121,37 +122,31 @@ const About = () => {
                 languages.
               </Typography>
               <Typography sx={{ color: "#777", lineHeight: 1.85 }}>
-                The annual TED Conference takes place in Vancouver, British
-                Columbia. TED's media initiatives include TED.com, where new
-                talks are posted daily. TED's open translation project has made
-                TED Talks available in over 100 languages.
+                Meanwhile, independently run TEDx events help share ideas in
+                communities around the world.
               </Typography>
-              
+            </Grid>
+            <Grid item xs={12} md={6}>
               <Box
                 sx={{
-                  mt: 5,
-                  p: 4,
-                  border: "1px solid rgba(229,9,20,0.15)",
+                  border: "1px solid rgba(229,9,20,0.2)",
+                  p: { xs: 4, md: 6 },
+                  background: "rgba(17, 17, 17, 0.4)",
                   position: "relative",
                   "&::before": {
                     content: '""',
                     position: "absolute",
-                    top: -1,
+                    top: 0,
                     left: 0,
-                    width: "40%",
-                    height: 2,
+                    width: 4,
+                    height: "100%",
                     background: "#E50914",
                   },
                 }}
               >
                 <Typography
-                  sx={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: { xs: "2.5rem", sm: "3.5rem" },
-                    color: "#E50914",
-                    lineHeight: 1,
-                    mb: 2,
-                  }}
+                  variant="h3"
+                  sx={{ color: "#ffffff", mb: 2, fontSize: "2rem" }}
                 >
                   "Ideas Worth Spreading"
                 </Typography>
@@ -189,7 +184,7 @@ const About = () => {
             overline="Our Chapter"
             title={
               <>
-                About TEDx <span>VETIAS</span>
+                About TED<Box component="span" sx={{ fontFamily: "'DM Sans', sans-serif", textTransform: "lowercase", fontSize: "0.72em", verticalAlign: "0.06em", color: "#E50914" }}>x</Box>VETIAS
               </>
             }
             subtitle="We are students, faculty, and dreamers united by one belief: that ideas have the power to change the world."

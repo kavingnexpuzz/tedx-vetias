@@ -179,7 +179,6 @@ const Hero = () => {
                 fontSize: "0.7rem",
                 letterSpacing: "0.3em",
                 color: "#E50914",
-                textTransform: "uppercase",
                 fontWeight: 600,
               }}
             >
@@ -278,7 +277,7 @@ const Hero = () => {
                 fontSize: { xs: "0.75rem", sm: "0.85rem" },
                 fontWeight: 700,
                 letterSpacing: "0.05em",
-                textTransform: "uppercase",
+                textTransform: "none",
                 borderColor: "#FFFFFF",
                 color: "#FFFFFF",
                 border: "2px solid #FFFFFF",
@@ -291,7 +290,7 @@ const Hero = () => {
                 transition: "all 0.3s ease",
               }}
             >
-              About TEDx
+              About TEDxVETIAS
             </Button>
           </Box>
         </Box>
