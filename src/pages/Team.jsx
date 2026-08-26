@@ -255,6 +255,7 @@ const Team = () => {
   // Grouping logic for Leadership vs Core Team
   const leadership = filtered.filter(
     (m) =>
+      m._id === "30" ||
       m.position.toLowerCase().includes("advisor") ||
       m.position.toLowerCase().includes("advisory") ||
       m.position.toLowerCase().includes("organizer") ||
