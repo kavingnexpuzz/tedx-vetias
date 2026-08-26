@@ -40,13 +40,14 @@ const SAMPLE_TEAM = [
     department: "",
     photo: "/images/Rajkumar.png",
   },
-   {
+  {
     _id: "30",
     name: "Mr. Vignesh Chandrasekhar",
     position: "Experience Curator",
     department: "",
     photo: "/images/vignesh.jpeg",
   },
+
   {
     _id: "3",
     name: "Paripoorna",
@@ -259,11 +260,11 @@ const Team = () => {
       m.position.toLowerCase().includes("advisory") ||
       m.position.toLowerCase().includes("organizer") ||
       m.position.toLowerCase().includes("co-organizer") ||
-      m.position.toLowerCase().includes("innovation") ||
-      m.position.toLowerCase().includes("technical trainer") ||
-      m.position.toLowerCase().includes("trainer") ||
-      m.position.toLowerCase().includes("curator") ||
-      m.position.toLowerCase().includes("faculty"),
+      m.position.toLowerCase().includes("experience") ||
+      m.position.toLowerCase().includes("Innovation") ||
+      m.position.toLowerCase().includes("faculty") 
+      
+      
   );
 
   const volunteers = filtered.filter((m) =>
