@@ -106,6 +106,15 @@ const SAMPLE_SPEAKERS = [
     topic: "Music & Arts",
     photo: "images/saivignesh.png",
   },
+  {
+    _id: "13",
+    name: "Arvinda Bharathi",
+    role: "Senior Director at Everstage & Author",
+    description:
+      "Arvinda Bharathi is a business leader at Everstage and the acclaimed author of the campus fiction novel 'When the Gates Closed'.",
+    topic: "Literature & Identity",
+    photo: "images/AB.png",
+  },
 ];
 
 const Speakers = () => {
@@ -138,7 +147,7 @@ const Speakers = () => {
         </Typography>
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Typography variant="overline" sx={{ color: '#E50914', fontFamily: "'DM Mono', monospace", letterSpacing: '0.25em', fontSize: '0.72rem' }}>
-            Voices 2025
+            Voices 2026
           </Typography>
           <Typography variant="h1" sx={{ fontSize: { xs: '3.5rem', md: '7rem' }, lineHeight: 0.88, mt: 1 }}>
             Our<br /><Box component="span" sx={{ color: '#E50914' }}>Speakers</Box>
