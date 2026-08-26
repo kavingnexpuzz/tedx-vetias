@@ -20,13 +20,6 @@ const SAMPLE_TEAM = [
     photo: "/images/kartika.png",
   },
   {
-    _id: "30",
-    name: "Mr. Vignesh chandrasekar",
-    position: "Innovation cell & technical trainer",
-    department: "Social media handling",
-    photo: "/images/vignesh.jpeg",
-  },
-  {
     _id: "9",
     name: "Dr. Radhika C",
     position: "Co-Organizer",
@@ -46,6 +39,13 @@ const SAMPLE_TEAM = [
     position: "Advisory Member",
     department: "",
     photo: "/images/Rajkumar.png",
+  },
+   {
+    _id: "30",
+    name: "Mr. Vignesh Chandrasekhar",
+    position: "Experience Curator",
+    department: "",
+    photo: "/images/vignesh.jpeg",
   },
   {
     _id: "3",
@@ -254,11 +254,15 @@ const Team = () => {
   // Grouping logic for Leadership vs Core Team
   const leadership = filtered.filter(
     (m) =>
+      m._id === "30" ||
       m.position.toLowerCase().includes("advisor") ||
       m.position.toLowerCase().includes("advisory") ||
       m.position.toLowerCase().includes("organizer") ||
       m.position.toLowerCase().includes("co-organizer") ||
-      m.position.toLowerCase().includes("Innovation")||
+      m.position.toLowerCase().includes("innovation") ||
+      m.position.toLowerCase().includes("technical trainer") ||
+      m.position.toLowerCase().includes("trainer") ||
+      m.position.toLowerCase().includes("curator") ||
       m.position.toLowerCase().includes("faculty"),
   );
 
