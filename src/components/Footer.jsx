@@ -52,7 +52,7 @@ const Footer = () => {
                 fontSize: "0.88rem",
               }}
             >
-              TEDx VETIAS is an independently organized TED event at VETIAS
+              TEDxVETIAS is an independently organized TED event at VETIAS
               College. We bring together brilliant minds to share ideas that
               matter — locally organized, globally inspired.
             </Typography>
@@ -234,7 +234,7 @@ const Footer = () => {
             variant="caption"
             sx={{ color: "#444", letterSpacing: "0.08em" }}
           >
-            © {new Date().getFullYear()} TEDx VETIAS. All rights reserved.
+            © {new Date().getFullYear()} TEDxVETIAS. All rights reserved.
           </Typography>
           <Typography
             variant="caption"

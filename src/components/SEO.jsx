@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-const SITE_NAME = "TEDx VETIAS";
+const SITE_NAME = "TEDxVETIAS";
 const SITE_URL = "https://tedx.vetias.ac.in";
 const DEFAULT_DESCRIPTION =
-  "TEDx VETIAS brings ideas worth spreading to the VETIAS community through inspiring talks, bold stories, and meaningful conversations.";
+  "TEDxVETIAS brings ideas worth spreading to the VETIAS community through inspiring talks, bold stories, and meaningful conversations.";
 const DEFAULT_IMAGE =
   "https://vetias.ac.in/wp-content/uploads/2022/03/favicon-vet.png";
 

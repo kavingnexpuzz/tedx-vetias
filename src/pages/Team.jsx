@@ -285,7 +285,7 @@ const Team = () => {
     <Box sx={{ background: "#0a0a0a", minHeight: "100vh", pb: 10 }}>
       <SEO
         title="Our Team"
-        description="Meet the passionate student team behind TEDx VETIAS turning a bold idea into an unforgettable experience."
+        description="Meet the passionate student team behind TEDxVETIAS turning a bold idea into an unforgettable experience."
       />
       {/* Page Header */}
       <Box

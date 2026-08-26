@@ -29,7 +29,7 @@ const About = () => {
       />
       <SEO
         title="About Us"
-        description="Learn more about TEDx VETIAS, our history, and the passionate team dedicated to bringing ideas worth spreading to our community."
+        description="Learn more about TEDxVETIAS, our history, and the passionate team dedicated to bringing ideas worth spreading to our community."
       />
       {/* Hero */}
       <Box
@@ -92,7 +92,7 @@ const About = () => {
             }}
           >
             TEDx programs are locally organized events that bring people
-            together to share a TED-like experience. At TEDx VETIAS, we create a
+            together to share a TED-like experience. At TEDxVETIAS, we create a
             space for big ideas — a platform for thinkers, doers, and dreamers
             from all walks of life to spark meaningful conversations.
           </Typography>
@@ -182,7 +182,7 @@ const About = () => {
         </Container>
       </Box>
 
-      {/* About TEDx VETIAS */}
+      {/* About TEDxVETIAS */}
       <Box sx={{ py: 14, background: "rgba(8, 8, 8, 0.45)", position: "relative", zIndex: 1 }}>
         <Container maxWidth="lg">
           <SectionTitle

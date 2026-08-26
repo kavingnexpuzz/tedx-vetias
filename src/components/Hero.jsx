@@ -183,7 +183,7 @@ const Hero = () => {
                 fontWeight: 600,
               }}
             >
-              TEDx VETIAS · 2026
+              TEDxVETIAS · 2026
             </Typography>
             <Box
               sx={{ width: 32, height: 2, background: "#E50914", mx: "auto" }}

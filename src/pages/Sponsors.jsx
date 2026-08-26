@@ -70,7 +70,7 @@ const Sponsors = () => {
     <Box>
       <SEO 
         title="Sponsors" 
-        description="TEDx VETIAS is made possible by the generous support of organizations that believe in the power of ideas."
+        description="TEDxVETIAS is made possible by the generous support of organizations that believe in the power of ideas."
       />
       {/* Hero */}
       <Box sx={{ pt: 20, pb: 12, background: '#0f0f0f', position: 'relative', overflow: 'hidden' }}>
@@ -85,7 +85,7 @@ const Sponsors = () => {
             Our <Box component="span" sx={{ color: '#E50914' }}>Sponsors</Box>
           </Typography>
           <Typography sx={{ color: '#666', maxWidth: 500, lineHeight: 1.85, mt: 3, fontSize: '1rem' }}>
-            TEDx VETIAS is made possible by the generous support of organizations that believe in the power of ideas.
+            TEDxVETIAS is made possible by the generous support of organizations that believe in the power of ideas.
           </Typography>
         </Container>
       </Box>

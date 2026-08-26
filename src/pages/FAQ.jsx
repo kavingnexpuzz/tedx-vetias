@@ -10,16 +10,16 @@ const FAQS = [
   {
     category: 'About the Event',
     items: [
-      { q: 'What is TEDx VETIAS?', a: 'TEDx VETIAS is an independently organized TED event licensed by TED. It is hosted annually at VETIAS College  in Erode, bringing together speakers, performers, and thinkers to share ideas worth spreading.' },
-      { q: 'When and where will the event be held?', a: 'TEDx VETIAS 2026 will be held on September 13, 2026, from 9:00 AM to 6:00 PM at the VETIAS College Auditorium, Erode - 638012, Tamil Nadu, India.' },
+      { q: 'What is TEDxVETIAS?', a: 'TEDxVETIAS is an independently organized TED event licensed by TED. It is hosted annually at VETIAS College  in Erode, bringing together speakers, performers, and thinkers to share ideas worth spreading.' },
+      { q: 'When and where will the event be held?', a: 'TEDxVETIAS 2026 will be held on September 13, 2026, from 9:00 AM to 6:00 PM at the VETIAS College Auditorium, Erode - 638012, Tamil Nadu, India.' },
       { q: 'What is the theme for 2026?', a: '"Beyond Boundaries" — this year\'s theme explores how the most transformative ideas emerge when we dare to cross the borders of discipline, geography, and conventional thinking.' },
     ],
   },
   {
     category: 'Registration & Tickets',
     items: [
-      { q: 'How do I register for TEDx VETIAS?', a: 'Registrations open approximately 6 weeks before the event. Follow our social media channels and website for announcements. Seats are limited and fill up quickly.' },
-      { q: 'Is the event open to the public?', a: 'Yes! TEDx VETIAS is open to students, professionals, educators, and anyone with a curious mind. We welcome attendees from all backgrounds.' },
+      { q: 'How do I register for TEDxVETIAS?', a: 'Registrations open approximately 6 weeks before the event. Follow our social media channels and website for announcements. Seats are limited and fill up quickly.' },
+      { q: 'Is the event open to the public?', a: 'Yes! TEDxVETIAS is open to students, professionals, educators, and anyone with a curious mind. We welcome attendees from all backgrounds.' },
       { q: 'Are there any registration fees?', a: 'There is a nominal registration fee to cover event costs. Concessions are available for students. Check our registration page when it opens for current pricing.' },
       { q: 'Can I attend if I am not from VETIAS College?', a: 'Absolutely. TEDx events are open to the public. We encourage attendees from all institutions and organizations to join us.' },
     ],
@@ -35,9 +35,9 @@ const FAQS = [
   {
     category: 'Volunteering & Sponsorship',
     items: [
-      { q: 'How can I volunteer for TEDx VETIAS?', a: 'Volunteer applications open approximately 2 months before the event. Roles include event coordination, logistics, media, design, and hospitality. Apply through our contact page or email.' },
-      { q: 'How can my organization sponsor TEDx VETIAS?', a: 'We offer various sponsorship tiers with different benefits and visibility options. Please contact our team at tedxvetias@college.edu for our sponsorship prospectus.' },
-      { q: 'What do sponsors receive in return?', a: 'Sponsors receive branding on all event materials, recognition during the event, access to attendee networking sessions, and logo placement on the TEDx VETIAS website and talk videos.' },
+      { q: 'How can I volunteer for TEDxVETIAS?', a: 'Volunteer applications open approximately 2 months before the event. Roles include event coordination, logistics, media, design, and hospitality. Apply through our contact page or email.' },
+      { q: 'How can my organization sponsor TEDxVETIAS?', a: 'We offer various sponsorship tiers with different benefits and visibility options. Please contact our team at tedxvetias@college.edu for our sponsorship prospectus.' },
+      { q: 'What do sponsors receive in return?', a: 'Sponsors receive branding on all event materials, recognition during the event, access to attendee networking sessions, and logo placement on the TEDxVETIAS website and talk videos.' },
     ],
   },
 ];
@@ -53,7 +53,7 @@ const FAQ = () => {
     <Box>
       <SEO 
         title="FAQ" 
-        description="Frequently Asked Questions about TEDx VETIAS. Find information about event dates, registration, tickets, and more."
+        description="Frequently Asked Questions about TEDxVETIAS. Find information about event dates, registration, tickets, and more."
       />
       {/* Hero */}
       <Box sx={{ pt: 20, pb: 12, background: '#0f0f0f', position: 'relative', overflow: 'hidden' }}>

@@ -71,7 +71,7 @@ const Home = () => {
     <Box>
       <SEO
         title="Home"
-        description="TEDx VETIAS 2026 - Beyond Boundaries. Discover inspiring ideas worth spreading from diverse voices at VETIAS College."
+        description="TEDxVETIAS 2026 - Beyond Boundaries. Discover inspiring ideas worth spreading from diverse voices at VETIAS College."
         keywords="TEDx, VETIAS, innovation, ideas worth spreading, Beyond Boundaries"
       />
       {/* ── HERO ─────────────────────────────────────────── */}

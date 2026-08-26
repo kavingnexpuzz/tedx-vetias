@@ -141,7 +141,7 @@ const Speakers = () => {
     <Box>
       <SEO 
         title="Speakers" 
-        description="Meet the remarkable speakers of TEDx VETIAS 2026. Discover the thought leaders and innovators who will challenge and inspire your perspective."
+        description="Meet the remarkable speakers of TEDxVETIAS 2026. Discover the thought leaders and innovators who will challenge and inspire your perspective."
       />
       {/* Hero */}
       <Box sx={{ pt: 20, pb: 12, background: '#0f0f0f', position: 'relative', overflow: 'hidden' }}>
