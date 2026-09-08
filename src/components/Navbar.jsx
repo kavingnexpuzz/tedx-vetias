@@ -83,7 +83,7 @@ const Navbar = () => {
                   color: isActive(link.path) ? "#E50914" : "#ccc",
                   fontSize: "0.72rem",
                   letterSpacing: "0.14em",
-                  fontWeight: isActive(link.path) ? 700 : 500,
+                  fontWeight: isActive(link.path) ? 900 : 700,
                   px: 1.5,
                   py: 1,
                   position: "relative",

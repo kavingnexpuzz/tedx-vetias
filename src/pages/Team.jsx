@@ -47,7 +47,13 @@ const SAMPLE_TEAM = [
     department: "",
     photo: "/images/vignesh.jpeg",
   },
-
+  {
+    _id: "31",
+    name: "Mr. Pragatheeswaran T",
+    position: "Experience Curator",
+    department: "",
+    photo: "/images/praga.png",
+  },
   {
     _id: "3",
     name: "Paripoorna",
