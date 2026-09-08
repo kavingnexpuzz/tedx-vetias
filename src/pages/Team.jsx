@@ -367,6 +367,7 @@ const Team = () => {
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   borderRadius: "4px",
+                  fontWeight: 700,
                   transition: "all 0.25s ease",
                   "&:hover": { borderColor: "#E50914", color: "#E50914" },
                 }}

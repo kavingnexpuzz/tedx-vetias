@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -24,7 +26,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E50914;
+  background: #e50914;
   border-radius: 0;
 }
 
