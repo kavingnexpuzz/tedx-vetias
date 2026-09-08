@@ -29,6 +29,7 @@ const theme = createTheme({
     text: { primary: '#f0f0f0', secondary: '#999999' },
   },
   typography: {
+    fontSize: 16,
     fontFamily: "'DM Sans', sans-serif",
     h1: { fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' },
     h2: { fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' },
