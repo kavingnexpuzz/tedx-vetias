@@ -16,13 +16,13 @@ import { getSpeakers } from "../services/api";
 
 const SAMPLE_SPEAKERS = [
   {
-    _id: "1",
-    name: "Nandha Kumar",
-    role: "Indian Revenue Service (IRS) Officer & Motivational Speaker",
+    _id: "12",
+    name: "Sai Vignesh",
+    role: "Playback Singer, and Musician",
     description:
-      "V. Nandakumar is a prominent Indian Revenue Service (IRS) officer, Income Tax Commissioner, and motivational speaker known for overcoming severe childhood hardships.",
-    topic: "Motivational Speaking & Public Service",
-    photo: "images/Nanthakumar.png",
+      "Sai Vignesh is a talented playback singer and musician, known for his melodious voice and contributions to the music industry.",
+    topic: "Music & Arts",
+    photo: "images/saivignesh.png",
   },
   {
     _id: "2",

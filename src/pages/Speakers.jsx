@@ -79,15 +79,15 @@ const SAMPLE_SPEAKERS = [
     topic: "Kuchipudi Dance & Cultural Heritage",
     photo: "images/SonaSathees.png",
   },
-  {
-    _id: "10",
-    name: "Nandha Kumar",
-    role: "Indian Revenue Service (IRS) Officer & Motivational Speaker",
-    description:
-      "V. Nandakumar is a prominent Indian Revenue Service (IRS) officer, Income Tax Commissioner, and motivational speaker known for overcoming severe childhood hardships.",
-    topic: "Motivational Speaking & Public Service",
-    photo: "images/Nanthakumar.png",
-  },
+  // {
+  //   _id: "10",
+  //   name: "Nandha Kumar",
+  //   role: "Indian Revenue Service (IRS) Officer & Motivational Speaker",
+  //   description:
+  //     "V. Nandakumar is a prominent Indian Revenue Service (IRS) officer, Income Tax Commissioner, and motivational speaker known for overcoming severe childhood hardships.",
+  //   topic: "Motivational Speaking & Public Service",
+  //   photo: "images/Nanthakumar.png",
+  // },
   {
     _id: "11",
     name: "M. YUVARAJA",
