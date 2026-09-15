@@ -180,7 +180,8 @@ const Footer = () => {
                 },
                 { label: "+91 90479 51115", href: "tel:+9190479 51115" },
                 {
-                  label: "VET Institute of Arts and Sciences, Erode - 638012",
+                  label:
+                    "VET Institute of Arts and Science(CO-Education) College - Erode, Thindal",
                   href: "#",
                 },
               ].map((c, i) => (
