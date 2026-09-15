@@ -21,7 +21,7 @@ const QUICK_LINKS = [
 const SOCIALS = [
   { icon: <InstagramIcon fontSize="small" />, href: 'https://www.instagram.com/vetiascoed/?hl=en', label: 'Instagram' },
   { icon: <TwitterIcon fontSize="small" />, href: 'https://x.com/vetias4087', label: 'Twitter' },
-  { icon: <LinkedInIcon fontSize="small" />, href: 'https://in.linkedin.com/in/vetias-erode-279b24229', label: 'LinkedIn' },
+  { icon: <LinkedInIcon fontSize="small" />, href: 'https://in.linkedin.com/company/vet-institute-of-arts-and-science', label: 'LinkedIn' },
   { icon: <YouTubeIcon fontSize="small" />, href: 'https://www.youtube.com/c/vetias', label: 'YouTube' },
 ];
 
@@ -181,7 +181,7 @@ const Footer = () => {
                 { label: "+91 90479 51115", href: "tel:+9190479 51115" },
                 {
                   label:
-                    "VET Institute of Arts and Science(CO-Education) College - Erode, Thindal",
+                    "VET Institute of Arts and Science(Co-education) College,Thindal, Erode - 638012",
                   href: "#",
                 },
               ].map((c, i) => (
