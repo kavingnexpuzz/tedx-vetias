@@ -62,12 +62,11 @@ const SAMPLE_SPEAKERS = [
   },
   {
     _id: "7",
-    name: "​M S Aishwarya",
-    role: "Tamil Nadu State Cricketer",
-    description:
-      "​M S Aishwarya is a Tamil Nadu state cricketer, top-order batter, and India’s 4th fastest bowler.",
-    topic: "Cricket & Sports Excellence",
-    photo: "images/aiswarya.jpeg",
+    name: "Speaker Onboarding",
+    role: "To Be Announced",
+    description: "New speaker onboarding in progress. Stay tuned for the upcoming announcement!",
+    topic: "Onboarding Soon",
+    photo: "",
   },
 
   {
@@ -90,12 +89,11 @@ const SAMPLE_SPEAKERS = [
   // },
   {
     _id: "11",
-    name: "M. YUVARAJA",
-    role: "Entrepreneur",
-    description:
-      "A prominent political figure from Erode, M. Yuvaraja has a multi-decade career in public service, having transitioned from leading the Tamil Maanila Congress (TMC) youth wing to contesting elections with the BJP.",
-    topic: "Grassroots Political Leadership and Regional Governance",
-    photo: "images/yuvaraj.png",
+    name: "Speaker Onboarding",
+    role: "To Be Announced",
+    description: "New speaker onboarding in progress. Stay tuned for the upcoming announcement!",
+    topic: "Onboarding Soon",
+    photo: "",
   },
   {
     _id: "12",

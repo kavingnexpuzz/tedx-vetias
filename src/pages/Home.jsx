@@ -25,13 +25,13 @@ const SAMPLE_SPEAKERS = [
     photo: "images/saivignesh.png",
   },
   {
-    _id: "2",
-    name: "​M S Aishwarya",
-    role: "Tamil Nadu State Cricketer",
+    _id: "1",
+    name: "Dr. Jayaprakash Jagadeesan",
+    role: "Psychiatrist & Founder, Manathin Maiyam",
     description:
-      "​M S Aishwarya is a Tamil Nadu state cricketer, top-order batter, and India’s 4th fastest bowler.",
-    topic: "Cricket & Sports Excellence",
-    photo: "images/aiswarya.jpeg",
+      "Dr. Jayaprakash Jagadeesan is a psychiatrist and the founder-director of Manathin Maiyam, a psychological wellness and mental health care centre located in Erode, Tamil Nadu.",
+    topic: "Mental Health & Wellbeing",
+    photo: "images/JayaprakashJegadeesan.png",
   },
   {
     _id: "4",
