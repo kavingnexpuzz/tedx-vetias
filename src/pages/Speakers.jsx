@@ -62,11 +62,12 @@ const SAMPLE_SPEAKERS = [
   },
   {
     _id: "7",
-    name: "Speaker Onboarding",
-    role: "To Be Announced",
-    description: "New speaker onboarding in progress. Stay tuned for the upcoming announcement!",
-    topic: "Onboarding Soon",
-    photo: "",
+    name: "Dr. Shriram K. Vasudevan",
+    role: "Senior Manager (Director) - Industrial AI, Accenture",
+    description:
+      "Dr. Shriram K. Vasudevan is a distinguished technology leader, educator, and internationally acclaimed AI advisor with over 18 years of experience spanning both industry and academia. He currently serves as Director - Industrial AI, Agentic AI Solutions, at Accenture where he drives innovation at the intersection of artificial intelligence, data, and digital transformation.",
+    topic: "Industrial AI & Agentic AI Solutions",
+    photo: "images/Accenture.jpeg",
   },
 
   {
