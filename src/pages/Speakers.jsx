@@ -79,22 +79,23 @@ const SAMPLE_SPEAKERS = [
     topic: "Kuchipudi Dance & Cultural Heritage",
     photo: "images/SonaSathees.png",
   },
-  // {
-  //   _id: "10",
-  //   name: "Nandha Kumar",
-  //   role: "Indian Revenue Service (IRS) Officer & Motivational Speaker",
-  //   description:
-  //     "V. Nandakumar is a prominent Indian Revenue Service (IRS) officer, Income Tax Commissioner, and motivational speaker known for overcoming severe childhood hardships.",
-  //   topic: "Motivational Speaking & Public Service",
-  //   photo: "images/Nanthakumar.png",
-  // },
+  {
+    _id: "10",
+    name: "Thiru. S. Kandasamy, IAS",
+    role: "District Collector, Erode",
+    description:
+      "Thiru. S. Kandasamy, IAS (2019 batch, Tamil Nadu cadre), serves as the District Collector of Erode, leading key administrative, public welfare, and regional development initiatives.",
+    topic: "Public Administration & Governance",
+    photo: "images/ias.jpg",
+  },
   {
     _id: "11",
-    name: "Speaker Onboarding",
-    role: "To Be Announced",
-    description: "New speaker onboarding in progress. Stay tuned for the upcoming announcement!",
-    topic: "Onboarding Soon",
-    photo: "",
+    name: "Haritha.S",
+    role: "Football Coach",
+    description:
+      "Haritha S is a dedicated football coach and NIS certified trainer from SAI Sports Academy, Kolkata. Holding an AIFF D license with extensive national and inter-university championship experience, she is committed to empowering youth through discipline, player development, and tactical excellence.",
+    topic: "Football Coaching & Youth Development",
+    photo: "images/football.jpeg",
   },
   {
     _id: "12",
