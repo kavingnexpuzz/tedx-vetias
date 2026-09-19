@@ -115,7 +115,15 @@ const SAMPLE_SPEAKERS = [
     topic: "Literature & Identity",
     photo: "images/AB.png",
   },
- 
+  {
+    _id: "14",
+    name: "Dr. A R Rajah Mohaideen",
+    role: "UPSC CSE 2025 - AIR 7",
+    description:
+      "Dr. A R Rajah Mohaideen is a UPSC CSE 2025 rank holder who secured AIR 7. He is from Chennai, Tamil Nadu, completed his schooling at DAV Group of Schools, Chennai.",
+    topic: "UPSC & Civil Services",
+    photo: "images/Rajamoideen.jpg.jpeg",
+  },
 ];
 
 const Speakers = () => {
