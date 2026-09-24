@@ -18,7 +18,7 @@ const SAMPLE_SPEAKERS = [
   {
     _id: "12",
     name: "Sai Vignesh",
-    role: "Playback Singer, and Musician",
+    role: "Carnatic Musician & Playback Singer",
     description:
       "Sai Vignesh is a talented playback singer and musician, known for his melodious voice and contributions to the music industry.",
     topic: "Music & Arts",
@@ -294,120 +294,51 @@ const Home = () => {
         </Container>
       </Box>
 
-      {/* ── SPONSORS ─────────────────────────────────────── */}
-      {/* <Box
-        sx={{
-          py: 12,
-          background: "rgba(10,10,10,0.4)",
-          borderTop: "1px solid rgba(229,9,20,0.1)",
-          overflow: "hidden",
-        }}
-      >
-        <Container maxWidth="lg">
-          <SectionTitle
-            overline="Partners & Supporters"
-            title={
-              <>
-                Our <span>Sponsors</span>
-              </>
-            }
-            subtitle="Leading organizations that support and empower our mission of spreading ideas."
-          />
-        </Container>
-
-        <Box sx={{ mt: 6, position: "relative", width: "100%" }}>
-          <LogoLoop
-            logos={SAMPLE_SPONSORS}
-            speed={60}
-            direction="left"
-            logoHeight={6}
-            gap={0}
-            fadeOut
-            fadeOutColor="rgba(10,10,10,1)"
-            ariaLabel="Our sponsors"
-            renderItem={(sponsor) => (
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    minWidth: "220px",
-                    minHeight: "80px",
-                    px: 3.5,
-                    py: 2,
-                    background: "rgba(18, 18, 18, 0.7)",
-                    backdropFilter: "blur(8px)",
-                    borderRadius: "16px",
-                    border: "1px solid rgba(255, 255, 255, 0.05)",
-                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    "&:hover": {
-                      borderColor: "rgba(229, 9, 20, 0.5)",
-                      boxShadow: "0 8px 32px rgba(229, 9, 20, 0.15)",
-                      transform: "translateY(-2px)",
-                    },
-                    mr: 4
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontFamily: "'DM Mono', monospace",
-                      fontSize: "0.65rem",
-                      color: "#E50914",
-                      letterSpacing: "0.15em",
-                      textTransform: "uppercase",
-                      mb: 0.5,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {sponsor.category}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "1.1rem",
-                      fontWeight: 700,
-                      color: "#FFFFFF",
-                      letterSpacing: "0.02em",
-                    }}
-                  >
-                    {sponsor.name}
-                  </Typography>
-                </Box>
-
-                
-                <Box
-                  sx={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: "50%",
-                    background: "rgba(229, 9, 20, 0.5)",
-                    boxShadow: "0 0 8px rgba(229, 9, 20, 0.6)",
-                    mr: 4
-                  }}
-                />
-              </Box>
-            )}
-          />
-        </Box>
-      </Box> */}
-
+       
       {/* ── STATS ────────────────────────────────────────── */}
       <Box
         sx={{
+          position: "relative",
           py: 12,
           borderTop: "1px solid rgba(255,255,255,0.04)",
           borderBottom: "1px solid rgba(255,255,255,0.04)",
+          overflow: "hidden",
+          background: "#050505",
         }}
       >
-        <Container maxWidth="lg">
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(90deg, rgba(3,3,3,0.85) 0%, rgba(3,3,3,0.35) 22%, rgba(3,3,3,0.35) 78%, rgba(3,3,3,0.85) 100%)",
+          }}
+        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster=""
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: 0.38,
+            filter: "sepia(0.15) saturate(1.2) contrast(1.2) brightness(0.45)",
+            pointerEvents: "none",
+          }}
+        >
+          <source
+            src="https://drive.google.com/file/d/1ZBj_1r4OTslCJYdKXxpIjtPEXQK6V4uI/preview"
+            type="video/mp4"
+          />
+        </video>
+
+        <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1 }}>
           <Grid container spacing={4} justifyContent="center">
             {[
               { value: "12+", label: "Inspiring Speakers" },
@@ -449,3 +380,6 @@ const Home = () => {
 };
 
 export default Home;
+
+
+

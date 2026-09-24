@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Container, Typography, Grid, Button } from '@mui/material';
+import emailjs from '@emailjs/browser';
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  TextField,
+  Snackbar,
+  Alert,
+} from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import EmailIcon from '@mui/icons-material/Email';
 import HandshakeIcon from '@mui/icons-material/Handshake';
@@ -71,6 +85,17 @@ const SponsorLogo = ({ sponsor, size }) => (
 
 const Sponsors = () => {
   const [sponsors, setSponsors] = useState([]);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    budget: '',
+    message: '',
+  });
+  const [sending, setSending] = useState(false);
+  const [notice, setNotice] = useState({ open: false, type: 'success', msg: '' });
 
   useEffect(() => {
     getSponsors()
@@ -87,6 +112,77 @@ const Sponsors = () => {
   }, []);
 
   const byTier = (tier) => sponsors.filter((s) => s.tier === tier);
+
+  const handleFormChange = (event) => {
+    const { name, value } = event.target;
+    setContactForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const openContactDialog = () => {
+    setContactForm({
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      budget: '',
+      message: '',
+    });
+    setContactOpen(true);
+  };
+
+  const handleSubmitInquiry = async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      setNotice({ open: true, type: 'error', msg: 'Please fill in your name, email, and message.' });
+      return;
+    }
+
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setNotice({
+        open: true,
+        type: 'error',
+        msg: 'MailJS is not configured yet. Add your service ID, template ID, and public key to the .env file before sending an inquiry.',
+      });
+      return;
+    }
+
+    setSending(true);
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: contactForm.name,
+          from_email: contactForm.email,
+          company_name: contactForm.company || 'Not provided',
+          phone: contactForm.phone || 'Not provided',
+          budget: contactForm.budget || 'Not provided',
+          subject: 'TEDxVETIAS Sponsorship Inquiry',
+          message: contactForm.message,
+        },
+        publicKey
+      );
+
+      setNotice({ open: true, type: 'success', msg: 'Your sponsorship inquiry has been sent successfully.' });
+      setContactOpen(false);
+      setContactForm({ name: '', email: '', company: '', phone: '', budget: '', message: '' });
+    } catch (error) {
+      console.error('MailJS sponsorship inquiry failed:', error);
+      setNotice({
+        open: true,
+        type: 'error',
+        msg: 'Something went wrong while sending the message. Please email tedxvetias@college.edu directly.',
+      });
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <Box>
@@ -416,11 +512,10 @@ const Sponsors = () => {
                 {/* Call to action buttons */}
                 <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
                   <Button
-                    component={Link}
-                    to="/contact"
                     variant="contained"
                     size="large"
                     endIcon={<ArrowForwardIcon />}
+                    onClick={openContactDialog}
                     sx={{
                       background: '#E50914',
                       color: '#ffffff',
@@ -438,11 +533,10 @@ const Sponsors = () => {
                     Partner With Us
                   </Button>
                   <Button
-                    component="a"
-                    href="mailto:tedxvetias@college.edu?subject=TEDxVETIAS%20Sponsorship%20Inquiry"
                     variant="outlined"
                     size="large"
                     startIcon={<EmailIcon />}
+                    onClick={openContactDialog}
                     sx={{
                       borderColor: 'rgba(255, 255, 255, 0.2)',
                       color: '#ffffff',
@@ -468,6 +562,161 @@ const Sponsors = () => {
         </Container>
       </Box>
 
+      <Dialog
+        open={contactOpen}
+        onClose={() => setContactOpen(false)}
+        maxWidth="sm"
+        fullWidth
+        PaperProps={{ sx: { background: '#101010', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 0 } }}
+      >
+        <DialogTitle sx={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: '2.1rem', letterSpacing: '0.06em', color: '#fff', pb: 1 }}>
+          Sponsor Inquiry
+        </DialogTitle>
+        <Box component="form" onSubmit={handleSubmitInquiry}>
+          <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 2, pt: 2 }}>
+            <TextField
+              label="Your Name"
+              name="name"
+              value={contactForm.name}
+              onChange={handleFormChange}
+              fullWidth
+              required
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  background: '#111',
+                  borderRadius: 0,
+                  '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+                  '&:hover fieldset': { borderColor: '#E50914' },
+                  '&.Mui-focused fieldset': { borderColor: '#E50914' },
+                },
+                '& .MuiInputLabel-root': { color: '#7b7b7b' },
+                '& .MuiInputLabel-root.Mui-focused': { color: '#E50914' },
+                '& .MuiOutlinedInput-input': { color: '#fff' },
+              }}
+            />
+            <TextField
+              label="Email Address"
+              name="email"
+              type="email"
+              value={contactForm.email}
+              onChange={handleFormChange}
+              fullWidth
+              required
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  background: '#111',
+                  borderRadius: 0,
+                  '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+                  '&:hover fieldset': { borderColor: '#E50914' },
+                  '&.Mui-focused fieldset': { borderColor: '#E50914' },
+                },
+                '& .MuiInputLabel-root': { color: '#7b7b7b' },
+                '& .MuiInputLabel-root.Mui-focused': { color: '#E50914' },
+                '& .MuiOutlinedInput-input': { color: '#fff' },
+              }}
+            />
+            <TextField
+              label="Company / Organization"
+              name="company"
+              value={contactForm.company}
+              onChange={handleFormChange}
+              fullWidth
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  background: '#111',
+                  borderRadius: 0,
+                  '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+                  '&:hover fieldset': { borderColor: '#E50914' },
+                  '&.Mui-focused fieldset': { borderColor: '#E50914' },
+                },
+                '& .MuiInputLabel-root': { color: '#7b7b7b' },
+                '& .MuiInputLabel-root.Mui-focused': { color: '#E50914' },
+                '& .MuiOutlinedInput-input': { color: '#fff' },
+              }}
+            />
+            <TextField
+              label="Phone Number"
+              name="phone"
+              value={contactForm.phone}
+              onChange={handleFormChange}
+              fullWidth
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  background: '#111',
+                  borderRadius: 0,
+                  '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+                  '&:hover fieldset': { borderColor: '#E50914' },
+                  '&.Mui-focused fieldset': { borderColor: '#E50914' },
+                },
+                '& .MuiInputLabel-root': { color: '#7b7b7b' },
+                '& .MuiInputLabel-root.Mui-focused': { color: '#E50914' },
+                '& .MuiOutlinedInput-input': { color: '#fff' },
+              }}
+            />
+            <TextField
+              label="Budget / Sponsorship Range"
+              name="budget"
+              value={contactForm.budget}
+              onChange={handleFormChange}
+              fullWidth
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  background: '#111',
+                  borderRadius: 0,
+                  '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+                  '&:hover fieldset': { borderColor: '#E50914' },
+                  '&.Mui-focused fieldset': { borderColor: '#E50914' },
+                },
+                '& .MuiInputLabel-root': { color: '#7b7b7b' },
+                '& .MuiInputLabel-root.Mui-focused': { color: '#E50914' },
+                '& .MuiOutlinedInput-input': { color: '#fff' },
+              }}
+            />
+            <TextField
+              label="Tell us about your sponsorship goals"
+              name="message"
+              value={contactForm.message}
+              onChange={handleFormChange}
+              fullWidth
+              multiline
+              rows={4}
+              required
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  background: '#111',
+                  borderRadius: 0,
+                  '& fieldset': { borderColor: 'rgba(255,255,255,0.1)' },
+                  '&:hover fieldset': { borderColor: '#E50914' },
+                  '&.Mui-focused fieldset': { borderColor: '#E50914' },
+                },
+                '& .MuiInputLabel-root': { color: '#7b7b7b' },
+                '& .MuiInputLabel-root.Mui-focused': { color: '#E50914' },
+                '& .MuiOutlinedInput-input': { color: '#fff' },
+              }}
+            />
+          </DialogContent>
+          <DialogActions sx={{ px: 3, pb: 2, justifyContent: 'space-between' }}>
+            <Button onClick={() => setContactOpen(false)} sx={{ color: '#fff' }}>
+              Cancel
+            </Button>
+            <Button type="submit" variant="contained" disabled={sending} sx={{ background: '#E50914', color: '#fff', px: 3 }}>
+              {sending ? 'Sending...' : 'Send Inquiry'}
+            </Button>
+          </DialogActions>
+        </Box>
+      </Dialog>
+
+      <Snackbar
+        open={notice.open}
+        autoHideDuration={5000}
+        onClose={() => setNotice((prev) => ({ ...prev, open: false }))}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert severity={notice.type} onClose={() => setNotice((prev) => ({ ...prev, open: false }))} sx={{ borderRadius: 0 }}>
+          {notice.msg}
+        </Alert>
+      </Snackbar>
+
       {/* Sponsorship CTA & Tiers Overview */}
       <Box sx={{ background: '#080808', borderTop: '1px solid rgba(229,9,20,0.1)', py: 16 }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
@@ -476,6 +725,50 @@ const Sponsors = () => {
             title={<>Become a <span>Sponsor</span></>}
             subtitle="Align your brand with innovation, curiosity, and impact. Connect with 500+ attendees and an expansive online audience."
           />
+
+          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 6, flexWrap: 'wrap' }}>
+            <Button
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForwardIcon />}
+              onClick={openContactDialog}
+              sx={{
+                background: '#E50914',
+                color: '#ffffff',
+                px: 4,
+                py: 1.5,
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                '&:hover': { background: '#b8070f', transform: 'translateY(-2px)' },
+                transition: 'all 0.25s ease',
+              }}
+            >
+              Partner With Us
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              startIcon={<EmailIcon />}
+              onClick={openContactDialog}
+              sx={{
+                borderColor: 'rgba(255,255,255,0.2)',
+                color: '#ffffff',
+                px: 3.5,
+                py: 1.5,
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                '&:hover': {
+                  borderColor: '#E50914',
+                  color: '#E50914',
+                  background: 'rgba(229,9,20,0.05)',
+                  transform: 'translateY(-2px)',
+                },
+                transition: 'all 0.25s ease',
+              }}
+            >
+              Contact Team
+            </Button>
+          </Box>
 
           <Grid container spacing={3} sx={{ mb: 6 }}>
             {TIERS.map((tier) => (
@@ -509,11 +802,10 @@ const Sponsors = () => {
 
           <ScrollReveal direction="up">
             <Button
-              component={Link}
-              to="/contact"
               variant="contained"
               size="large"
               endIcon={<ArrowForwardIcon />}
+              onClick={openContactDialog}
               sx={{
                 background: '#E50914',
                 color: '#ffffff',

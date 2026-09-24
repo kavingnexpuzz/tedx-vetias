@@ -100,7 +100,7 @@ const SAMPLE_SPEAKERS = [
   {
     _id: "12",
     name: "Sai Vignesh",
-    role: "Playback Singer, and Musician",
+    role: "Carnatic Musician & Playback Singer",
     description:
       "Sai Vignesh is a talented playback singer and musician, known for his melodious voice and contributions to the music industry.",
     topic: "Music & Arts",
